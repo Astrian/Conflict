@@ -1,6 +1,6 @@
 {
     "name": "Conflict",
-    "description": "Make the current page red",
+    "description": "A RSS Reader.",
     "version": "2.0",
     "permissions": [
         "notifications"
