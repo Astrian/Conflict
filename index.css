@@ -1,0 +1,47 @@
+body{
+    background: rgb(244, 242, 235);
+    font-family: Roboto,"Noto Sans S Chinese";
+}
+
+.username{
+    font-size: 30px;
+}
+
+.toolbar{
+    padding-top: 20px;
+}
+
+.card{
+    background: #fafafa;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+    border-radius: 2px;
+}
+
+.cardcontent{
+    padding: 20px;
+}
+
+.articletitle{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Yuna tickets on sale: */
+/*font-family: Roboto-Regular;
+font-size: 24px;
+color: #FFFFFF;
+line-height: 24px;*/
+
+/* Line 3: */
+/*border: 1px solid rgba(255,255,255,0.12);*/
+
+/* May 24, 2014: */
+/*font-family: Roboto-Regular;
+font-size: 12px;
+color: #FFFFFF;
+line-height: 14px;*/
+
+/* bounds: */
+
+/* Imported Layers: */
+/*background: #FFFFFF;*/
