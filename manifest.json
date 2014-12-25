@@ -5,9 +5,20 @@
     "permissions": [
         "notifications"
     ],
+    "sockets":{
+        "udp":{
+            "send":[":*"],
+            "bind":[":*"]
+        }
+    },
+    "icons":{
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
     "app":{
         "background": {
-            "scripts": ["index.js"],
+            "scripts": ["conflict.js"],
             "persistent": false
         }
     },
