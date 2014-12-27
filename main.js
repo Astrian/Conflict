@@ -1,39 +1,31 @@
-var socketId;
+var IP="202.108.22.5";
+var PORT=80;
 
-// 处理 onReceive 事件。
-var onReceive = function(info) {
-  if (info.socketId !== socketId)
-    return;
-  console.log(info.data);
-};
+chrome.sockets.tcp.create({}, function(createInfo) {
+    chrome.sockets.tcp.connect(createInfo.socketId,IP, PORT, function(){
+        var data=str2ab("GET / HTTP/1.1\nHost: www.baidu.com\nConnection: keep-alive\nCache-Control: max-age=0\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36\nDNT: 1\nAccept-Encoding: gzip,deflate,sdch\nAccept-Language: zh-CN,zh;q=0.8\r\n\r\n")
+        chrome.sockets.tcp.send(createInfo.socketId, data, function(c){
+            console.log(c);
+        });
+    });
+});
 
-// 创建套接字
-chrome.sockets.udp.create({}, function(socketInfo) {
-  socketId = socketInfo.socketId;
-  // 设置事件处理程序并绑定套接字。
-  chrome.sockets.udp.onReceive.addListener(onReceive);
-  chrome.sockets.udp.bind(socketId,
-    "0.0.0.0", 0, function(result) {
-      if (result < 0) {
-        console.log("无法绑定套接字。");
-        return;
-      }
-      var arrayBuffer = str2ab("123456789");
-      chrome.sockets.udp.send(socketId, arrayBuffer,
-        '127.0.0.1', 8888, function(sendInfo) {
-          console.log("已发送 " + sendInfo.bytesSent + " 字节");
-      });
-  });
+chrome.sockets.tcp.onReceive.addListener(function(info) {
+    console.log(ab2str(info.data));
+});
+
+chrome.sockets.tcp.onReceiveError.addListener(function(info){
+    console.log(info);
 });
 
 function str2ab(str){
-    var buf = new ArrayBuffer(str.length*2);
-    bufView = new Uint16Array(buf);
-    for(var i=0; i<str.length; i++){
-        bufView[i] = str.charCodeAt(i);
-    }
-    return buf;
+	var buf = new ArrayBuffer(str.length*2);
+		bufView = new Uint16Array(buf);
+		for(var i=0; i<str.length; i++){
+				bufView[i] = str.charCodeAt(i);
+		}
+		return buf;
 }
 function ab2str(buf){
-    return String.fromCharCode.apply(null, new Uint16Array(buf));
+		return String.fromCharCode.apply(null, new Uint16Array(buf));
 }

@@ -5,10 +5,9 @@
     "permissions": [
         "notifications"
     ],
-    "sockets":{
-        "udp":{
-            "send":[":*"],
-            "bind":[":*"]
+    "sockets": {
+        "tcp": {
+            "connect": [":*"]
         }
     },
     "icons":{
