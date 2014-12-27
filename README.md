@@ -16,3 +16,8 @@
 ## 开源软件代码使用报告
 
 本程序内嵌了开源 HTML 框架 Bootstrap、开源 JS 项目 jQuery 的代码。代码都保存于项目内，以便于用户离线使用。
+
+## 项目社交网络主页
+
+- [动态博客](http://conflictrss.lofter.com)
+- [Google+社群](https://plus.google.com/communities/113739848602058434859)
