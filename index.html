@@ -4,16 +4,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="./additional-framework/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./animation.css">
         <link rel="stylesheet" href="./index.css">
-        <script src="./additional-framework/jquery.min.js"></script>
-        <script src="./additional-framework/bootstrap/js/bootstrap.min.js"></script>
-        
     </head>
     
     <body>
         
         <div class="container">
-            <p class="username">Cranky</p>
+            <div class="noti" id="noti">
+                <div class="notibox">
+                    <p class="noticontent" id="noticontent">已将该文章标记星标。 <a href="#" id="closenoti" onclick="closenoti">关闭</a></p>
+                </div>
+            </div>
+            <div class="dropdown top">
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="mainMenu" data-toggle="dropdown">
+                    ≡ Cranky
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="mainMenu">
+                    <li role="presentation"><a role="menuitem" data-target="#about">关于</a></li>
+                </ul>
+            </div>
+            
+            <div class="modal fade" id="about">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
             <p class="classTitle">头条</p>
             <div class= "card">
                 <div class="cardcontent">
@@ -22,32 +51,46 @@
                 </div>
             </div>
             <p class="classTitle">我的 Feed</p>
-            <div class="card">
-                <div class="cardcontent subcontent">
+            <div class="card card-head">
+                <div class="cardcontent">
                     <h3>借助智能路由，极企要做企业管理的 HealthKit</h3>
                     <small>爱范儿 · 3 小时前</small>
                 </div>
-                <div class="cardcontent subcontent">
+            </div>
+            <div class="card card-center">
+                <div class="cardcontent">
                     <h3>2014 年度科技公司：Uber</h3>
                     <small>爱范儿 · 6 小时前</small>
                 </div>
-                <div class="cardcontent subcontent">
+            </div>
+            <div class="card card-center">
+                <div class="cardcontent">
                     <h3>NSA 说：圣诞快乐，这是我们的非法监控记录</h3>
                     <small>好奇心日报 · 7 小时前</small>
                 </div>
-                <div class="cardcontent subcontent">
+            </div>
+            <div class="card card-center">
+                <div class="cardcontent">
                     <h3>借助智能路由，极企要做企业管理的 HealthKit</h3>
                     <small>爱范儿 · 3 小时前</small>
                 </div>
-                <div class="cardcontent subcontent">
+            </div>
+            <div class="card card-center">
+                <div class="cardcontent">
                     <h3>2014 年度科技公司：Uber</h3>
                     <small>爱范儿 · 6 小时前</small>
                 </div>
-                <div class="cardcontent subcontent-bottom">
+            </div>
+            <div class="card card-bottom">
+                <div class="cardcontent">
                     <h3>NSA 说：圣诞快乐，这是我们的非法监控记录</h3>
                     <small>好奇心日报 · 7 小时前</small>
                 </div>
             </div>
         </div>
+        <script src="./additional-framework/jquery.min.js"></script>
+        <script src="./additional-framework/bootstrap/js/bootstrap.min.js"></script>
+        <script src="action.js"></script>
+        <script src="./additional-framework/jquery.pin.js"></script>
     </body>
 </html>
