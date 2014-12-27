@@ -1,5 +1,3 @@
- document.getElementById("button").onclick = popupNotification;
-
 function popupNotification(){       
     document.getElementById("noti").style.top = "90%";
     document.getElementById("noti").style.display = "inherit";
@@ -12,5 +10,3 @@ function closenoti(){
     document.getElementById("noti").style.opacity = "0";
     document.getElementById("noti").style.webkitAnimation = "closeNotification 0.2s"; 
 }
-
-$(".noti").pin();
