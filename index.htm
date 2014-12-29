@@ -9,41 +9,51 @@
     </head>
     
     <body>
-        <p id="test">test</p>
+        
+        <nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                          <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ Cranky</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li onclick="popupAbout" id="aboutlink"><a>关于</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </nav>
+        
         <div class="container">
             <div class="noti" id="noti">
                 <div class="notibox">
                     <p class="noticontent" id="noticontent">已将该文章标记星标。 <a href="#" id="closenoti" onclick="closenoti">关闭</a></p>
                 </div>
             </div>
-            <div class="dropdown top">
-                <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="mainMenu" data-toggle="dropdown">
-                    ≡ Cranky
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="mainMenu">
-                    <li role="presentation"><a role="menuitem" data-target="#about">关于</a></li>
-                </ul>
+            
+            <div class="headColumn">
+                <p class="classTitle headColumn">头条</p>
             </div>
-            
-            <div class="modal fade" id="about">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-            
-            <p class="classTitle">头条</p>
             <div class= "card">
                 <div class="cardcontent">
                     <h3>「2014」过去一年，这些网站的用户信息被黑客拿到了</h3>
@@ -88,6 +98,32 @@
                 </div>
             </div>
         </div>
+        
+        <!--关于弹出框-->
+        <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">关于</h4>
+                  </div>
+                  <div class="modal-body">
+                      <h1 class="text-center">Conflict Beta</h1>
+                      <h4 class="text-center">Version 0.1.0.0 (Beta)</h4>
+                      <p class="text-center">By Astrian &amp; 白羊</p>
+                      <h3 class="text-center">致谢</h3>
+                      <p class="text-center">Rabby Xia<br />Yui</p>
+                      <p class="text-center">以及正在使用这款应用的<br />Cranky</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        <div class="bottom"></div>
+        
         <script src="./additional-framework/jquery.min.js"></script>
         <script src="./additional-framework/bootstrap/js/bootstrap.min.js"></script>
         <script src="./action.js"></script>

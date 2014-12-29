@@ -20,10 +20,10 @@ chrome.sockets.tcp.onReceiveError.addListener(function(info){
 		rss=rss.slice(i);
 		
 		if(info.resultCode==-15){
-				xmlDoc=parser.parseFromString(rss,"text/xml");
-
-				var x=xmlDoc.getElementsByTagName("title")[1].innerHTML;
-				document.getElementById("test").innerHTML=x;
+            xmlDoc=parser.parseFromString(rss,"text/xml");
+            console.log(xmlDoc.getElementsByTagName("title"));
+            var x=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+            document.getElementById("test").innerHTML=x;
 		}
 });
 

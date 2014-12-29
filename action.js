@@ -1,3 +1,4 @@
+//通知相关
 function popupNotification(){       
     document.getElementById("noti").style.top = "90%";
     document.getElementById("noti").style.display = "inherit";
@@ -9,4 +10,11 @@ document.getElementById("closenoti").onclick = closenoti;
 function closenoti(){
     document.getElementById("noti").style.opacity = "0";
     document.getElementById("noti").style.webkitAnimation = "closeNotification 0.2s"; 
+    $(".noti").pin();
+}
+
+//关于弹出框相关
+document.getElementById("aboutlink").onclick = popupAbout;
+function popupAbout(){
+    $('#about').modal();
 }
