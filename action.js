@@ -26,7 +26,7 @@ function intoArticle(articleID){ //articleID 为文章 ID
     document.getElementById("list").style.display = "none";
     document.getElementById("article-detil").style = "inherit";
     document.getElementById("mainmenu").style.display = "none";
-    document.getElementById("back").style.display="inherit"
+    document.getElementById("backbutton").style.display="inherit"
 }
 
 //返回文章列表
@@ -34,5 +34,5 @@ function backtolist(){ //articleID 为文章 ID
     document.getElementById("article-detil").style.display = "none";
     document.getElementById("list").style = "inherit";
     document.getElementById("back").style.display = "none";
-    document.getElementById("mainmenu").style.display="inherit"
+    document.getElementById("mainmenubutton").style.display="inherit"
 }
