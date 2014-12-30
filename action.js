@@ -13,8 +13,16 @@ function closenoti(){
     $(".noti").pin();
 }
 
-//关于弹出框相关
+//「关于」弹出框相关
 document.getElementById("aboutlink").onclick = popupAbout;
 function popupAbout(){
     $('#about').modal();
+}
+
+//进入文章详细页
+function intoArticle(articleID){ //articleID 为文章 ID
+    document.getElementById("list").style.display = "none";
+    document.getElementById("article-detil").style = "inherit";
+    document.getElementById("articledetil-title").innerHTML = "文章名称，请从 RSS 中抓取";
+    document.getElementById("articledetil-content").innerHTML = "文章内容，请从 RSS 中抓取";
 }

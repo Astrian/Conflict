@@ -14,14 +14,6 @@
             <div class="container">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,9 +21,7 @@
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ Cranky</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a>偏好设置</a></li>
                                     <li class="divider"></li>
                                     <li onclick="popupAbout" id="aboutlink"><a>关于</a></li>
                                 </ul>
@@ -44,7 +34,7 @@
             </div>
         </nav>
         
-        <div class="container">
+        <div class="container" id="list">
             <div class="noti" id="noti">
                 <div class="notibox">
                     <p class="noticontent" id="noticontent">已将该文章标记星标。 <a href="#" id="closenoti" onclick="closenoti">关闭</a></p>
@@ -99,6 +89,19 @@
             </div>
         </div>
         
+        <div class="container headArticle" id="article-detil" style="display:none;">
+            
+            <div class="card">
+                <div class="cardcontent">
+                    <h1 id="articledetil-title">「2014」过去一年，这些网站的用户信息被黑客拿到了</h1>
+                    <small>3小时前 · 李硕明 夏雨青 崔绮雯 · 好奇心日报</small>
+                    <div class="articleContent" id="articledetil-content"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
         <!--关于弹出框-->
         <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -108,15 +111,17 @@
                     <h4 class="modal-title" id="myModalLabel">关于</h4>
                   </div>
                   <div class="modal-body">
+                      <p class="text-center"><image src="./icon.png" height="200px"></p>
                       <h1 class="text-center">Conflict Beta</h1>
                       <h4 class="text-center">Version 0.1.0.0 (Beta)</h4>
                       <p class="text-center">By Astrian &amp; 白羊</p>
                       <h3 class="text-center">致谢</h3>
                       <p class="text-center">Rabby Xia<br />Yui</p>
-                      <p class="text-center">以及正在使用这款应用的<br />Cranky</p>
+                      <p class="text-center">以及正在使用这款应用的<br /><span id="username">&#123;Nickname&#125;</span></p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" style="display:none;" id="NightRaidButton">赤红之瞳</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
                   </div>
                 </div>
               </div>
