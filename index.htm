@@ -18,12 +18,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="backbutton"><a>返回</a></li>
+                            <li class="backbutton" style="display:none;"><a>返回</a></li>
                             <li class="dropdown" id="mainmenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ Cranky</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a>偏好设置</a></li>
                                     <li><a>刷新</a></li>
+                                    <li><a>偏好设置</a></li>
+                                    <li onclick="popupSourcemanager" id="sourcemanagerlink"><a>源管理</a></li>
                                     <li class="divider"></li>
                                     <li onclick="popupAbout" id="aboutlink"><a>关于</a></li>
                                 </ul>
@@ -106,28 +107,71 @@
         
         <!--关于弹出框-->
         <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">关于</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p class="text-center"><image src="./icon.png" height="200px"></p>
-                      <h1 class="text-center">Conflict Beta</h1>
-                      <h4 class="text-center">Version 0.1.0.0 (Beta)</h4>
-                      <p class="text-center">By Astrian &amp; 白羊</p>
-                      <h3 class="text-center">致谢</h3>
-                      <p class="text-center">Rabby Xia<br />Yui</p>
-                      <p class="text-center">以及正在使用这款应用的<br /><span id="username">&#123;Nickname&#125;</span></p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" style="display:none;" id="NightRaidButton">赤红之瞳</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
-                  </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">关于</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center"><image src="./icon.png" height="200px"></p>
+                        <h1 class="text-center">Conflict Beta</h1>
+                        <h4 class="text-center">Version 0.1.0.0 (Beta)</h4>
+                        <p class="text-center">By Astrian &amp; 白羊</p>
+                        <h3 class="text-center">致谢</h3>
+                        <p class="text-center">Rabby Xia<br />Yui</p>
+                        <p class="text-center">以及正在使用这款应用的<br /><span id="username">&#123;Nickname&#125;</span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" style="display:none;" id="NightRaidButton">赤红之瞳</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                    </div>
                 </div>
-              </div>
             </div>
+        </div>
+        
+        <!--源管理弹出框-->
+        <div class="modal fade" id="sourcemanager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">源管理</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>源名称</th>
+                                    <th>源地址</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>爱范儿</td>
+                                    <td>http://www.ifanr.com/feed</td>
+                                    <td><span class="glyphicon glyphicon-pencil" title="编辑"></span> <span class="glyphicon glyphicon-trash" title="删除"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>好奇心日报</td>
+                                    <td>http://qdaily.com/feed.xml</td>
+                                    <td><span class="glyphicon glyphicon-pencil" title="编辑"></span> <span class="glyphicon glyphicon-trash" title="删除"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-xs-10" id="addsourceurl" style="display:none;"><input type="url" class="form-control" placeholder="输入源地址"></div>
+                        <button type="button" class="btn btn-success" id="addsourcesave" onclick="addsourcesave" style="display:none;">添加</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="addsource" id="addsourcetrigger">新增源</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="bottom"></div>
         

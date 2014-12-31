@@ -19,6 +19,26 @@ function popupAbout(){
     $('#about').modal();
 }
 
+//「源管理」弹出框相关
+//打开框
+document.getElementById("sourcemanagerlink").onclick = popupSourcemanager;
+function popupSourcemanager(){
+    $('#sourcemanager').modal();
+}
+//新增源
+document.getElementById("addsourcetrigger").onclick = addsource;
+function addsource(){
+    document.getElementById("addsourcetrigger").style.display = "none";
+    document.getElementById("addsourceurl").style.display = "inherit";
+    document.getElementById("addsourcesave").style.display = "inherit";
+}
+document.getElementById("addsourcesave").onclick = addsourcesave;
+function addsourcesave(){
+    document.getElementById("addsourcetrigger").style.display = "inherit";
+    document.getElementById("addsourceurl").style.display = "none";
+    document.getElementById("addsourcesave").style.display = "none";
+}
+
 //进入文章详细页
 function intoArticle(articleID){ //articleID 为文章 ID
     document.getElementById("articledetil-title").innerHTML = "文章名称，请从 RSS 中抓取";
