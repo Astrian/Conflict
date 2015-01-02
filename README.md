@@ -43,7 +43,7 @@ The name *Conflict* is not a final name for this app, it’s only a code name fo
 - Sync with cloud
 - Some simple social functions (such as *like this article* or link grabber for Sina Weibo)
 
-### Usage Report for Open Source Project
+### Usage Report for Open Source Code
 
 This project included the code from [Bootstrap](https://github.com/twbs/bootstrap) and [jQuery](https://github.com/jquery/jquery). For the offline-use experience, All the code from those open source project will be saved to the project.
 
