@@ -2,7 +2,7 @@
 
 ## 中文
 
-> For English introduction, click [here](#English).
+> For English introduction, scroll down please.
 
 ### 简介
 
@@ -28,7 +28,7 @@
 
 ## English
 
-> 中文介绍请点击[这里](#中文)
+> 中文介绍请拉上去。
 
 ### Introduction
 
