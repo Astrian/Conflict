@@ -1,9 +1,0 @@
-@-webkit-keyframes popNotification{
-    0%      {top:103%}
-    100%    {top:90%}
-}
-
-@-webkit-keyframes closeNotification{
-    0%      {opacity: 1;}
-    100%    {opacity: 0;}
-}
