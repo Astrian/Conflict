@@ -1,0 +1,106 @@
+{
+    "initGuide_Hello":{
+   	   "message":"Hello",
+       "description":"Say hello to user in the first step at initialise guide." 
+    },
+    "initGuide_welcome":{
+		"message":"Welcome to LightRead",
+        "description":"Welcome user to use LightRead."
+    },
+    "initGuide_description":{
+      "message":"LightRead is a RSS reader<br />We hope it can bring you a reading goodtime.",
+      "description":"Introduction to LightRead."
+    },
+    "initGuide_whatsyourname":{
+        "message":"How can I call you?",
+        "description":"Request for user's nickname."
+    },
+    "initGuide_continue":{
+        "message":"Continue",
+        "description":"Go to the next step of init guide."
+    },
+    "initGuide_nicknamePlaceholder":{
+        "message":"e.g. Cranky Chen",
+        "description":"Placeholder for the nickname input box."
+    },
+    "initGuide_step2title":{
+        "message":"Nice to meet you, [Nickname]!",
+        "description":"The title of second step of init guide."
+    },
+    "initGuide_Step2description":{
+        "message":"You can add some Atom source now.",
+        "description":"Second title of second step of init guide."
+    },
+    "atomManager":{
+      	"message":"Manage Source",
+        "description":"The option in the main menu."
+    },
+    "addAtomSource":{
+        "message":"Add atom source",
+        "description":"Add a source in anywhere."
+    },
+    "atomSourceName":{
+		"message":"Atom source name",
+        "description":"The atom source name(s)."
+    },
+    "atomSourceURL":{
+      	"message":"Atom source URL",
+        "description":"The atom source URL(s)."
+    },
+    "options":{
+      	"message":"Options",
+        "description":"Avaliable Options for some items (like sources)."
+    },
+    "edit":{
+      	"message":"Edit",
+        "description":"The edit operation."
+    },
+    "delete":{
+      	"message":"Delete",
+        "description":"The delete operation."
+    },
+    "save":{
+        "message":"Save",
+        "description":"The save operation."
+    },
+    "cancel":{
+        "message":"Cancel",
+        "description":"The cancel operation."
+    },
+    "refresh":{
+        "message":"Refresh",
+        "description":"The refresh operation."
+    },
+    "close":{
+        "message":"Close",
+        "description":"Close some pop-up window."
+    },
+    "preference":{
+      	"message":"Preference",
+        "description":"Function settings."
+    },
+    "about":{
+      	"message":"About",
+        "descrtiption":"About LightRead."
+    },
+    "verison":{
+        "message":"0.1.0.0 (Beta)",
+        "description":"Version number. NO NEED TO TRANSLATE."
+    },
+    "author":{
+        "message":"By Astrian & 白羊",
+        "description":"Author. NO NEED TO TRANSLATE."
+    },
+    "thanks":{
+        "message":"Thanks",
+        "description":"Say thanks to somebody."
+    },
+    "thankslist":{
+        "message":"Rabby Xia<br />Yui",
+        "description":"Thanks list. NO NEED TO TRANSLATE."
+    },
+    "usingThisApp":{
+        "message":"... and the man that using this app now",
+        "description":"Thanks to the user"
+    }
+}

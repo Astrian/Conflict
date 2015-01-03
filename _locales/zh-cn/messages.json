@@ -1,0 +1,83 @@
+{
+    "LightRead":{
+        "message":"LightRead 轻读"
+    },
+    "initGuide_Hello":{
+      "message":"你好"
+    },
+    "initGuide_welcome":{
+		"message":"欢迎使用 LightRead 轻读"
+    },
+    "initGuide_description":{
+      "message":"是一款 RSS 阅读器<br />我们希望它可以带给你一些不一样的阅读体验"
+    },
+    "initGuide_whatsyourname":{
+        "message":"请问该如何称呼？"
+    },
+    "initGuide_continue":{
+        "message":"继续"
+    },
+    "initGuide_nicknamePlaceholder":{
+        "message":"例如：Cranky Chen"
+    },
+    "initGuide_step2title":{
+        "message":"[Nickname]，很高兴遇见你！"
+    },
+    "initGuide_Step2description":{
+        "message":"现在，你可以添加一些 RSS 源了。"
+    },
+    "atomManager":{
+      	"message":"源管理"
+    },
+    "addAtomSource":{
+        "message":"添加源"
+    },
+    "atomSourceName":{
+		"message":"源名称"
+    },
+    "atomSourceURL":{
+      	"message":"源地址"
+    },
+    "options":{
+      	"message":"操作"
+    },
+    "edit":{
+      	"message":"编辑"
+    },
+    "delete":{
+      	"message":"删除"
+    },
+    "save":{
+        "message":"保存"
+    },
+    "cancel":{
+        "message":"取消"
+    },
+    "refresh":{
+        "message":"刷新"
+    },
+    "close":{
+        "message":"关闭"  
+    },
+    "preference":{
+      	"message":"偏好设置"
+    },
+    "about":{
+      	"message":"关于"
+    },
+    "verison":{
+        "message":"0.1.0.0 (Beta)"
+    },
+    "author":{
+        "message":"By Astrian & 白羊"
+    },
+    "thanks":{
+        "message":"致谢"
+    },
+    "thankslist":{
+        "message":"Rabby Xia<br />Yui"
+    },
+    "usingThisApp":{
+        "message":"以及正在使用这款应用的"
+    }
+}
