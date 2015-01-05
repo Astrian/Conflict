@@ -1,4 +1,21 @@
 {
+    "LightRead":{
+        "message":"LightRead"
+    },
+    "LightReadFullName":{
+        "message":"LightRead"
+    },
+    "appDescription":{
+        "message":"A RSS reader."
+    },
+    "version":{
+        "message":"0.1.0.0 (Beta)",
+        "description":"Version number. NO NEED TO TRANSLATE."
+    },
+    "author":{
+        "message":"By Astrian &amp; 白羊",
+        "description":"Author. NO NEED TO TRANSLATE."
+    },
     "initGuide_Hello":{
    	   "message":"Hello",
        "description":"Say hello to user in the first step at initialise guide." 
@@ -39,6 +56,10 @@
         "message":"Add atom source",
         "description":"Add a source in anywhere."
     },
+    "add":{
+        "message":"Add",
+        "description":"Add action."
+    },
     "atomSourceName":{
 		"message":"Atom source name",
         "description":"The atom source name(s)."
@@ -46,6 +67,10 @@
     "atomSourceURL":{
       	"message":"Atom source URL",
         "description":"The atom source URL(s)."
+    },
+    "atomSourceUrlPlaceholder":{
+      	"message":"Input the atom URL...",
+        "description":"A placeholder for source input box."
     },
     "options":{
       	"message":"Options",
@@ -83,14 +108,7 @@
       	"message":"About",
         "descrtiption":"About LightRead."
     },
-    "verison":{
-        "message":"0.1.0.0 (Beta)",
-        "description":"Version number. NO NEED TO TRANSLATE."
-    },
-    "author":{
-        "message":"By Astrian & 白羊",
-        "description":"Author. NO NEED TO TRANSLATE."
-    },
+    
     "thanks":{
         "message":"Thanks",
         "description":"Say thanks to somebody."

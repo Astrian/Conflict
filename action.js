@@ -56,3 +56,5 @@ function backtolist(){ //articleID 为文章 ID
     document.getElementById("back").style.display = "none";
     document.getElementById("mainmenubutton").style.display="inherit"
 }
+
+console.log(chrome.i18n.getMessage("refresh"));

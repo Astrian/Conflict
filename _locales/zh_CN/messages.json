@@ -1,6 +1,20 @@
 {
     "LightRead":{
+        "message":"轻读"
+    },
+    "LightReadFullName":{
         "message":"LightRead 轻读"
+    },
+    "appDescription":{
+        "message":"一款 RSS 阅读器。"
+    },
+    "version":{
+        "message":"0.1.0.0 (Beta)",
+        "description":"Version number. NO NEED TO TRANSLATE."
+    },
+    "author":{
+        "message":"By Astrian &amp; 白羊",
+        "description":"Author. NO NEED TO TRANSLATE."
     },
     "initGuide_Hello":{
       "message":"你好"
@@ -32,11 +46,17 @@
     "addAtomSource":{
         "message":"添加源"
     },
+    "add":{
+        "message":"添加"
+    },
     "atomSourceName":{
 		"message":"源名称"
     },
     "atomSourceURL":{
       	"message":"源地址"
+    },
+    "atomSourceUrlPlaceholder":{
+      	"message":"输入源地址"
     },
     "options":{
       	"message":"操作"
@@ -65,17 +85,11 @@
     "about":{
       	"message":"关于"
     },
-    "verison":{
-        "message":"0.1.0.0 (Beta)"
-    },
-    "author":{
-        "message":"By Astrian & 白羊"
-    },
     "thanks":{
         "message":"致谢"
     },
     "thankslist":{
-        "message":"Rabby Xia<br />Yui"
+        "message":"Rabby Xia<br />Yui Soda"
     },
     "usingThisApp":{
         "message":"以及正在使用这款应用的"

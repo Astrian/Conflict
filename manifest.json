@@ -1,6 +1,6 @@
 {
-    "name": "Conflict",
-    "description": "A RSS Reader.",
+    "name": "__MSG_LightRead__",
+    "description": "__MSG_appDescription__",
     "version": "0.1.0.0",
     "permissions": [
         "storage"
@@ -21,6 +21,6 @@
             "persistent": false
         }
     },
-    "default_locale":"en",
+    "default_locale":"zh_CN",
     "manifest_version": 2
 }

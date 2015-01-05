@@ -1,0 +1,12 @@
+document.getElementById("message_refresh").innerHTML = chrome.i18n.getMessage("refresh");
+document.getElementById("message_preference").innerHTML = chrome.i18n.getMessage("preference");
+document.getElementById("message_atomManager").innerHTML = chrome.i18n.getMessage("atomManager");
+document.getElementById("message_about").innerHTML = chrome.i18n.getMessage("about");
+document.getElementById("aboutModalTitle").innerHTML = chrome.i18n.getMessage("about");
+document.getElementById("message_appName").innerHTML = chrome.i18n.getMessage("LightReadFullName");
+document.getElementById("message_appName").innerHTML = chrome.i18n.getMessage("LightReadFullName");
+document.getElementById("message_version").innerHTML = chrome.i18n.getMessage("version");
+document.getElementById("message_author").innerHTML = chrome.i18n.getMessage("author");
+document.getElementById("message_thanks").innerHTML = chrome.i18n.getMessage("thanks");
+document.getElementById("message_thankslist").innerHTML = chrome.i18n.getMessage("thankslist");
+document.getElementById("message_usingThisApp").innerHTML = chrome.i18n.getMessage("usingThisApp");

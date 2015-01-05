@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="./additional-framework/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./animation.css">
         <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./font.css">
     </head>
     
     <body>
@@ -18,15 +19,15 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="backbutton" style="display:none;"><a>返回</a></li>
+                            <li class="backbutton" style="display:none;"><a><span class="glyphicon glyphicon-arrow-left"></span></a></li>
                             <li class="dropdown" id="mainmenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ Cranky</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a>刷新</a></li>
-                                    <li><a>偏好设置</a></li>
-                                    <li onclick="popupSourcemanager" id="sourcemanagerlink"><a>源管理</a></li>
+                                    <li><a id="message_refresh"></a></li>
+                                    <li><a id="message_preference"></a></li>
+                                    <li onclick="popupSourcemanager" id="sourcemanagerlink"><a id="message_atomManager"></a></li>
                                     <li class="divider"></li>
-                                    <li onclick="popupAbout" id="aboutlink"><a>关于</a></li>
+                                    <li onclick="popupAbout" id="aboutlink"><a id="message_about"></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -111,16 +112,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">关于</h4>
+                        <h4 class="modal-title" id="aboutModalTitle"></h4>
                     </div>
                     <div class="modal-body">
                         <p class="text-center"><image src="./icon.png" height="200px"></p>
-                        <h1 class="text-center">Conflict Beta</h1>
-                        <h4 class="text-center">Version 0.1.0.0 (Beta)</h4>
-                        <p class="text-center">By Astrian &amp; 白羊</p>
-                        <h3 class="text-center">致谢</h3>
-                        <p class="text-center">Rabby Xia<br />Yui</p>
-                        <p class="text-center">以及正在使用这款应用的<br /><span id="username">&#123;Nickname&#125;</span></p>
+                        <h1 class="text-center" id="message_appName"></h1>
+                        <h4 class="text-center">Version <span id="message_version"></span></h4>
+                        <p class="text-center" id="message_author"></p>
+                        <h3 class="text-center" id="message_thanks"></h3>
+                        <p class="text-center" id="message_thankslist"></p>
+                        <p class="text-center"><span id="message_usingThisApp">以及正在使用这款应用的</span><br /><span id="username">&#123;Nickname&#125;</span></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" style="display:none;" id="NightRaidButton">赤红之瞳</button>
@@ -136,15 +137,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">源管理</h4>
+                        <h4 class="modal-title" id="message_sourcemanager">源管理</h4>
                     </div>
                     <div class="modal-body">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>源名称</th>
-                                    <th>源地址</th>
-                                    <th>操作</th>
+                                    <th id="message_atomSourceName">ooo</th>
+                                    <th id="message_atomSourceURL"></th>
+                                    <th id="message_options"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,15 +157,15 @@
                                 <tr>
                                     <td>好奇心日报</td>
                                     <td>http://qdaily.com/feed.xml</td>
-                                    <td><span class="glyphicon glyphicon-pencil" title="编辑"></span> <span class="glyphicon glyphicon-trash" title="删除"></span></td>
+                                    <td><span class="glyphicon glyphicon-pencil" title="__MSG_edit__"></span> <span class="glyphicon glyphicon-trash" title="__MSG_delete__"></span></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="col-xs-10" id="addsourceurl" style="display:none;"><input type="url" class="form-control" placeholder="输入源地址"></div>
+                        <button type="button" class="btn btn-default" id="addsourcetrigger"><span id="message_addAtomSource"></span></button>
+                        <div class="col-xs-10" id="addsourceurl" style="display:none;"><input type="url" class="form-control" placeholder='http://www.example.com/feed'></div>
                         <button type="button" class="btn btn-success" id="addsourcesave" onclick="addsourcesave" style="display:none;">添加</button>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" onclick="addsource" id="addsourcetrigger">新增源</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                         <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
                         
@@ -178,7 +179,9 @@
         <script src="./additional-framework/jquery.min.js"></script>
         <script src="./additional-framework/bootstrap/js/bootstrap.min.js"></script>
         <script src="./action.js"></script>
+        <script src="./locales.js"></script>
         <script src="./additional-framework/jquery.pin.js"></script>
         <script src="./main.js"></script>
+        
     </body>
 </html>
