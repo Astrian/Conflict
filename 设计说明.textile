@@ -1,0 +1,15 @@
+rRss={
+	action:'rRss',
+	ip:'bangumi.tv',
+	file:'/feed/blog/anime'
+}
+
+gRss={
+	action:'gRss',
+	data:rssXml
+}
+
+rRss->gRss
+
+getAllRssT
+getRssText
