@@ -1,5 +1,4 @@
 var requestAllRss=function(data){
-	source=JSON.parse(data.source);
 	for(var x in source){
 		source[x].port=parseInt(source[x].port);
 		source[x].name=x;

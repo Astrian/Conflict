@@ -21,6 +21,37 @@ var e=function(message, sender, sendResponse){
 
 chrome.runtime.onMessage.addListener(e);
 
+var add=function(){
+	var message={
+		'action':'addRssSource',
+		'ip':document.getElementById('ip').value,
+		'port':document.getElementById('port').value,
+		'file':document.getElementById('file').value,
+		'name':document.getElementById('name').value
+	}
+	chrome.runtime.sendMessage(message);
+}
+
+var clearAlllocal=function(){
+	var message={
+		'action':'clearAlllocal'
+	}
+	chrome.runtime.sendMessage(message);
+}
+
+var lookAllRss=function(){
+	var message={
+		'action':'lookAllRss'
+	}
+	chrome.runtime.sendMessage(message);
+}
+
+document.getElementById('lookAllRss').onclick=lookAllRss;
+
+document.getElementById('add').onclick=add;
+
+document.getElementById('clearAlllocal').onclick=clearAlllocal;
+
 
 /*
 getRssTitleR

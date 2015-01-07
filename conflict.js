@@ -19,6 +19,29 @@ var e=function(message,sender,sendResponse){
 			loadRssTitle(source[x],x);
 		}
 	}
+	if(message.action=='clearAlllocal'){
+		clearAlllocal();
+		local.set({'source':'{}'},function(){});
+	}
+	if(message.action=='addRssSource'){
+		var data={};
+		data[message.name]={
+			'ip':message.ip,
+			'port':message.port,
+			'file':message.file
+		}
+		addLocal('source',JSON.stringify(data),function(){
+			local.get('source',function(data){
+				source=JSON.parse(data.source);
+				requestAllRss(data);
+			});
+		});
+	}
+	if(message.action=='lookAllRss'){
+		local.get('source',function(data){
+			console.log(JSON.parse(data.source));
+		});
+	}
 }
 
 var loadRssTitle=function(data,x){
