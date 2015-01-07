@@ -1,3 +1,5 @@
+var tcp=chrome.sockets.tcp;
+
 function str2ab(str){//要转换的字符串不能有中文
 	var buf = new ArrayBuffer(str.length+1);
 	bufView = new Uint8Array(buf);
@@ -72,6 +74,9 @@ function ab2Utf8(buf){
 	}
 	return str;
 }
+
+/*
+
 var tcp=function(){
 	this._tcp=chrome.sockets.tcp;
 	this.id=0;
@@ -96,3 +101,5 @@ var tcp=function(){
 		this._tcp.disconnect(this.id,back);
 	}.bind(this);
 }
+*/
+

@@ -17,7 +17,7 @@
     },
     "app":{
         "background": {
-            "scripts": ["tcp.js","conflict.js"],
+            "scripts": ["local.js","init.js","tcp.js","rssRequest.js","conflict.js"],
             "persistent": false
         }
     },

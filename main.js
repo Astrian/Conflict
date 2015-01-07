@@ -1,18 +1,31 @@
-var getRssS=function(){
+var cache=function(){
 	var message={
-		action:'getRssS',
-		ip:'yui-nya.com',
-		port:80,
-		file:'/feed'
+		'action':'cache'
 	}
 	chrome.runtime.sendMessage(message);
 }
 
-document.getElementById('test').onclick=getRssS;
+document.getElementById('tongBu').onclick=cache;
 
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
-	if(message.action=='getRssR'){
-		console.log(message);
-		//document.getElementById('link1').innerHTML=message.rss[0];
+var message={
+	'action':'getRssTitleS'
+}
+chrome.runtime.sendMessage(message);
+
+
+var e=function(message, sender, sendResponse){
+	if(message.action=='getRssTitleR'){
+		console.log(message.data);
 	}
-});
+}
+
+chrome.runtime.onMessage.addListener(e);
+
+
+/*
+getRssTitleR
+	action
+	title
+	name
+	n
+*/
