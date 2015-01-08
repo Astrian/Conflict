@@ -14,3 +14,13 @@ var addLocal=function(key,srt,back){
 var clearAlllocal=function(){
 	local.clear();
 }
+
+var rmRss=function(key,srt,back){
+	local.get(key,function(old){
+		var data={};
+		json=JSON.parse(old[key]);
+		delete json[srt];
+		data[key]=JSON.stringify(json);
+		local.set(data,back);
+	});
+}

@@ -23,12 +23,16 @@ var e=function(message,sender,sendResponse){
 		clearAlllocal();
 		local.set({'source':'{}'},function(){});
 	}
+	if(message.action=='subRss'){
+		rmRss('source',message.name,function(){});
+	}
 	if(message.action=='addRssSource'){
 		var data={};
 		data[message.name]={
 			'ip':message.ip,
 			'port':message.port,
-			'file':message.file
+			'file':message.file,
+			'class':message.class
 		}
 		addLocal('source',JSON.stringify(data),function(){
 			local.get('source',function(data){
@@ -44,47 +48,51 @@ var e=function(message,sender,sendResponse){
 	}
 }
 
-var loadRssTitle=function(data,x){
-	local.get(x,function(data){
-		var i=data[x].indexOf('<rss');
-		getRssTitle(data[x].slice(i));
+var loadRssTitle=function(obj,name){
+	local.get(name,function(data){
+		var i=data[name].indexOf('<rss');
+		getRssTitle(data[name].slice(i),obj,name);
 	});
 }
 
-var getRssTitle=function(data){
-	var parser=new DOMParser();
-	var xmlDoc=parser.parseFromString(data,"text/xml");
-
-	var title=xmlDoc.getElementsByTagName("title");
-	console.log(title);
-
-	/*for(var i=2;i<title.length;i++){
-		var message={
-			'action':'getRssTitleR',
-			'data':title[i].childNodes[0].nodeValue,
-			'time':i-2;
-		}
-		chrome.runtime.sendMessage(message);
-	}*/
+var getJSONLength=function(JSON){
+	var i=0;
+	for(var x in JSON){
+		i++;
+	}
+	return i;
 }
 
-//clearAlllocal();
+var data=new Array();
+var counter=0;
+
+var getRssTitle=function(xml,obj,name){
+	counter++;
+	var parser=new DOMParser();
+	var xmlDoc=parser.parseFromString(xml,"text/xml");
+
+	var item=xmlDoc.getElementsByTagName("item");
+	
+	for(var i=0;i<item.length;i++){
+		var rssData={
+			'title':item[i].getElementsByTagName("title")[0].childNodes[0].nodeValue,
+			'link':item[i].getElementsByTagName("link")[0].childNodes[0].nodeValue,
+			'pubDate':item[i].getElementsByTagName("pubDate")[0].childNodes[0].nodeValue,
+			'name':name,
+			'class':obj.class,
+			'description':item[i].getElementsByTagName("description")[0].childNodes[0].nodeValue
+		}
+		data.push(rssData);
+	}
+
+	if(counter!=getJSONLength(source))
+		return;
+	
+	var message={
+		'action':'getRssTitleR',
+		'data':data
+	}
+	chrome.runtime.sendMessage(message);
+}
 
 chrome.runtime.onMessage.addListener(e);
-
-/*var requestAllRss=function(data){
-	source=JSON.parse(data.source);
-	for(var x in source){
-		source[x].port=parseInt(source[x].port);
-		source[x].name=x;
-		source[x].xml='';
-		createTcp(source[x]);
-	}
-}*/
-
-/*
-	var message={
-					'action':'getRssTitleR',
-					'data':data
-				}
-*/

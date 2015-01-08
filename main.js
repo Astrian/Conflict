@@ -27,7 +27,8 @@ var add=function(){
 		'ip':document.getElementById('ip').value,
 		'port':document.getElementById('port').value,
 		'file':document.getElementById('file').value,
-		'name':document.getElementById('name').value
+		'name':document.getElementById('name').value,
+		'class':document.getElementById('class').value
 	}
 	chrome.runtime.sendMessage(message);
 }
@@ -46,11 +47,22 @@ var lookAllRss=function(){
 	chrome.runtime.sendMessage(message);
 }
 
+var sub=function(){
+	var message={
+		'action':'subRss',
+		'name':document.getElementById('name').value
+	}
+	chrome.runtime.sendMessage(message);
+}
+
 document.getElementById('lookAllRss').onclick=lookAllRss;
 
 document.getElementById('add').onclick=add;
 
+document.getElementById('sub').onclick=sub;
+
 document.getElementById('clearAlllocal').onclick=clearAlllocal;
+
 
 
 /*
