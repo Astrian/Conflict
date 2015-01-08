@@ -38,12 +38,13 @@
             </div>
         </nav>
         
-        <div class="container" id="list">
-            <div class="noti" id="noti">
+        <div class="noti" id="noti">
                 <div class="notibox">
                     <p class="noticontent" id="noticontent">已将该文章标记星标。 <a href="#" id="closenoti" onclick="closenoti">关闭</a></p>
                 </div>
             </div>
+        
+        <div class="container" id="list">
         
             <div class="card card-head">
                 <div class="cardcontent">
@@ -59,7 +60,7 @@
             </div>
             <div class="card card-bottom">
                 <div class="cardcontent">
-                    <h3 class="list-title">NSA 说：圣诞快乐，这是我们的非法监控记录</h3>
+                    <h3 class="list-title"></h3>
                     <small><span class="list-source"></span> &#8226; <span class="list-time"></span> &#8226; <span class="author"></span></small>
                 </div>
             </div>
@@ -115,27 +116,22 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th id="message_atomSourceName">ooo</th>
+                                    <th id="message_atomSourceName"></th>
                                     <th id="message_atomSourceURL"></th>
                                     <th id="message_options"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>爱范儿</td>
-                                    <td>http://www.ifanr.com/feed</td>
-                                    <td><span class="glyphicon glyphicon-pencil" title="编辑"></span> <span class="glyphicon glyphicon-trash" title="删除"></span></td>
-                                </tr>
-                                <tr>
-                                    <td>好奇心日报</td>
-                                    <td>http://qdaily.com/feed.xml</td>
-                                    <td><span class="glyphicon glyphicon-pencil" title="__MSG_edit__"></span> <span class="glyphicon glyphicon-trash" title="__MSG_delete__"></span></td>
+                                    <td class="feed-name"></td>
+                                    <td class="feed-url"></td>
+                                    <td class="feed-options"><span class="glyphicon glyphicon-pencil" title="编辑"></span> <span class="glyphicon glyphicon-trash" title="删除"></span></td>
                                 </tr>
                             </tbody>
                         </table>
                         <button type="button" class="btn btn-default" id="addsourcetrigger"><span id="message_addAtomSource"></span></button>
                         <div class="col-xs-10" id="addsourceurl" style="display:none;"><input type="url" class="form-control" placeholder='http://www.example.com/feed'></div>
-                        <button type="button" class="btn btn-success" id="addsourcesave" onclick="addsourcesave" style="display:none;">添加</button>
+                        <button type="button" class="btn btn-success" id="addsourcesave" onclick="addsourcesave" style="display:none;"><span id="message_add"></button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

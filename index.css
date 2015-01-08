@@ -3,6 +3,10 @@ body{
     background-color: rgb(250, 250, 247);
 }
 
+#list{
+    padding-top: 100px;
+}
+
 #welcome{
     padding-top: 20%
 }
