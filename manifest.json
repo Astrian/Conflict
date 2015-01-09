@@ -11,9 +11,9 @@
         }
     },
     "icons":{
-        "16": "Logo_16.png",
-        "32": "Logo_32.png",
-        "128": "Logo.png"
+        "16": "icon_16.png",
+        "32": "icon_32.png",
+        "128": "icon.png"
     },
     "app":{
         "background": {
