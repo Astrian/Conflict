@@ -1,117 +1,45 @@
-var IP="yui-nya.com";
-var PORT=80;
-var rss=new String();
-var parser=new DOMParser();
-
-chrome.sockets.tcp.create({}, function(createInfo) {
-		chrome.sockets.tcp.connect(createInfo.socketId,IP, PORT, function(){
-				var data="GET /feed HTTP/1.1\r\nHost: " + IP + "\r\n\r\n";
-				chrome.sockets.tcp.send(createInfo.socketId, str2ab(data), function(c){});
-		});
-});
-
-chrome.sockets.tcp.onReceive.addListener(function(info) {
-		rss=rss+ab2Utf8(info.data);
-});
-
-chrome.sockets.tcp.onReceiveError.addListener(function(info){
-		console.log(info);
-		var i = rss.indexOf("<rss");
-		rss=rss.slice(i);
-		
-		if(info.resultCode==-15){
-            xmlDoc=parser.parseFromString(rss,"text/xml");
-            console.log(xmlDoc.getElementsByTagName("title"));
-            var x=xmlDoc.getElementsByTagName("title")[1].innerHTML;
-            document.getElementById("test").innerHTML=x;
-		}
-});
-
-function str2ab(str){//要转换的字符串不能有中文
-	var buf = new ArrayBuffer(str.length+1);
-	bufView = new Uint8Array(buf);
-	for(var i=0;i<str.length;i++){
-			bufView[i] = str.charCodeAt(i);
-	}
-	return buf;
+var createDom=function(nameX,classX,innerHTMLX){
+	if(arguments.length<2)
+		var classX="";
+	if(arguments.length<3)
+		var innerHTMLX="";
+	var R=document.createElement(nameX);
+	R.className=classX;
+	R.innerHTML=innerHTMLX;
+	return R;
 }
-function ab2Utf8(buf){
-	var i = 0;
-	var pos = 0;
-	var str ="";
-	var unicode = 0;
-	var flag = 0;
-	var bufView = new Uint8Array(buf);
-	for (pos = 0; pos < bufView.length;){
-		flag= bufView[pos];
-		if ((flag >>>7) === 0 ) {
-			str+= String.fromCharCode(bufView[pos]);
-			pos += 1;
-			
-		}
-		else if ((flag &0xFC) === 0xFC ){
-			unicode = (bufView[pos] & 0x3) << 30;
-			unicode |= (bufView[pos+1] & 0x3F) << 24;
-			unicode |= (bufView[pos+2] & 0x3F) << 18;
-			unicode |= (bufView[pos+3] & 0x3F) << 12;
-			unicode |= (bufView[pos+4] & 0x3F) << 6;
-			unicode |= (bufView[pos+5] & 0x3F);
-			str+= String.fromCharCode(unicode);
-			pos += 6;
-			
-		}else if ((flag &0xF8) === 0xF8 ){
-			unicode = (bufView[pos] & 0x7) << 24;
-			unicode |= (bufView[pos+1] & 0x3F) << 18;
-			unicode |= (bufView[pos+2] & 0x3F) << 12;
-			unicode |= (bufView[pos+3] & 0x3F) << 6;
-			unicode |= (bufView[pos+4] & 0x3F);
-			str+= String.fromCharCode(unicode);
-			pos += 5;
-			
-		}
-		else if ((flag &0xF0) === 0xF0 ){
-			unicode = (bufView[pos] & 0xF) << 18;
-			unicode |= (bufView[pos+1] & 0x3F) << 12;
-			unicode |= (bufView[pos+2] & 0x3F) << 6;
-			unicode |= (bufView[pos+3] & 0x3F);
-			str+= String.fromCharCode(unicode);
-			pos += 4;
-			
-		}
-		
-		else if ((flag &0xE0) === 0xE0 ){
-			unicode = (bufView[pos] & 0x1F) << 12;;
-			unicode |= (bufView[pos+1] & 0x3F) << 6;
-			unicode |= (bufView[pos+2] & 0x3F);
-			str+= String.fromCharCode(unicode);
-			pos += 3;
-			
-		}
-		else if ((flag &0xC0) === 0xC0 ){ //110
-			unicode = (bufView[pos] & 0x3F) << 6;
-			unicode |= (bufView[pos+1] & 0x3F);
-			str+= String.fromCharCode(unicode);
-			pos += 2;
-			
-		}
-		else{
-			str+= String.fromCharCode(bufView[pos]);
-			pos += 1;
-		}
-	}
-	return str;
+var createList=function(title,source,time,author){
+	var R=createDom("div","card card-head");
+	var c=createDom("div","cardcontent");
+	var list=createDom("h3","list-title",title);
+
+	var small=createDom("small");
+
+	var span1=createDom("span","list-source",source);
+	var span2=createDom("span","list-time",time);
+	var span3=createDom("span","author",author);
+
+	R.appendChild(c);
+	c.appendChild(list);
+	c.appendChild(small);
+	small.appendChild(span1);
+	small.innerHTML=small.innerHTML+("&#8226");
+	small.appendChild(span2);
+	small.innerHTML=small.innerHTML+("&#8226");
+	small.appendChild(span3);
+
+	return R;
 }
 
-function saveData (key,data) {
-    chrome.storage.sync.set({key: data}, function() {});
+var write=function(txt){
+	var list=document.getElementById("list");
+	for(var i in txt)
+		list.appendChild(createList(txt[i][0],txt[i][1],txt[i][2],txt[i][3]));
 }
-function loadData (key) {
-    var data;
-    chrome.storage.sync.get(data, function(valueArray) {
-            data=valueArray;
-    });
-    return data;
-}
-function clearData(){
-    chrome.storage.sync.clear({key: data}, function() {});
-}
+
+testData=[
+	["a1","s1","t1","a1"],
+	["a2","s2","t2","a2"]
+]
+
+write(testData);
