@@ -28,7 +28,13 @@ function popupSourcemanager(){
 //点击了某一项删除
 document.getElementById("delete-listid-button").onclick = confirmDelete;
 function confirmDelete(){
-    document.getElementById("delete-listid").innerHTML = '<button type="button" class="btn btn-danger btn-xs">Confirm Delete</button>';
+    document.getElementById("delete-listid").innerHTML = '<button type="button" class="btn btn-danger btn-xs">Confirm Delete</button> <button type="button" class="btn btn-default  btn-xs" id="canceldelete">Cancel</button>';
+    document.getElementById("canceldelete").onclick = cancelDelete;
+}
+//从删除返回
+function cancelDelete(){
+    document.getElementById("delete-listid").innerHTML = '<a href="#" id="delete-listid-button" onclick="confirmDelete"><span class="glyphicon glyphicon-trash" title="删除"></span></a>';
+    document.getElementById("delete-listid-button").onclick = confirmDelete;
 }
 //新增源界面进入
 document.getElementById("addAtomSourceLink").onclick = goToAddAtomSource;

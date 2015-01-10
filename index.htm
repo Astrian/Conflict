@@ -103,13 +103,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>test</th>
-                                    <th>http://feed.test.com</th>
-                                    <th id="delete-listid"><a href="#" id="delete-listid-button" onclick="confirmDelete"><span class="glyphicon glyphicon-trash" title="删除"></span></a></th>
+                                    <td>test</td>
+                                    <td>http://feed.test.com</td>
+                                    <td id="delete-listid"><a href="#" id="delete-listid-button" onclick="confirmDelete"><span class="glyphicon glyphicon-trash" title="删除"></span></a></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" id="addAtomSourceLink" class="btn btn-default"><span id="message_addAtomSource" onclick="goToAddAtomSource"></span></button>
+                        <button type="button" id="addAtomSourceLink" class="btn btn-default"><span id="message_addAtomSource"></span></button>
                     </div>
                     <div class="modal-body" id="add_detil" style="display:none;">
                         <form role="form">
@@ -125,7 +125,7 @@
                                 <div class="pull-right">
                                 <button type="submit" class="btn btn-primary" id="addsource_submit" onclick="submitting"><span id="message_addsource_submit"></span></button>
                                 </div>
-                                <button class="btn btn-default" id="addsource_back" onclick="goToAtomSourceList"><span id="message_addsource_back"></span></button>
+                                <button class="btn btn-default" id="addsource_back" onclick="goToAtomSourceList" target="_blank"><span id="message_addsource_back"></span></button>
                             </fieldset>
                         </form>
                     </div>
