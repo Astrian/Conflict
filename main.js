@@ -54,17 +54,67 @@ var createFeedList=function(name,url){
 	return r;
 }
 
-var write=function(txt){
+var write=function(data){
 	var list=document.getElementById("list");
-	for(var i in txt)
-		list.appendChild(createList(txt[i][0],txt[i][1],txt[i][2],txt[i][3]));
+	for(var i=0;i<data.length;i++)
+		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author));
 }
 
-testData=[
-	["a1","s1","t1","a1"],
-	["a2","s2","t2","a2"]
-]
+var add=function(){
+	var url = document.getElementById("addSourceUrl").value;
+	url=url.slice(url.indexOf("//")+2);
+	var message={
+		"action":"addRssSource",
+		"ip":url.slice(0,url.indexOf("/")),
+		"port":"80",
+		"file":url.slice(url.indexOf("/")),
+		"name":"test",
+		"class":"test"
+	}
+	chrome.runtime.sendMessage(message);
+}
 
-write(testData);
+var lookAllRss=function(){
+	var message={
+		"action":"lookAllRssS"
+	}
+	chrome.runtime.sendMessage(message);
+}
 
-document.getElementById("feedManagement").appendChild(createFeedList("123","456"));
+var clearAlllocal=function(){
+	var message={
+		'action':'clearAlllocal'
+	}
+	chrome.runtime.sendMessage(message);
+}
+
+var updata=function(){
+	var message={
+		"action":"getRssTitleS"
+	}
+	chrome.runtime.sendMessage(message);
+
+	lookAllRss();
+}
+
+var e=function(message, sender, sendResponse){
+	if(message.action=="getRssTitleR"){
+		write(message.data);
+	}
+	if(message.action=="lookAllRssR"){
+		var feed=document.getElementById("feedManagement");
+		var data=JSON.parse(message.data.source);
+		for(var i in data)
+			feed.appendChild(createFeedList(i,"http://"+data[i].ip+data[i].file));
+	}
+	if(message.action=="cacheOK")
+		updata();
+}
+
+chrome.runtime.onMessage.addListener(e);
+
+document.getElementById("message_add").onclick=add;
+
+updata();
+
+//clearAlllocal();
