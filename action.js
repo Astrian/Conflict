@@ -25,19 +25,33 @@ document.getElementById("sourcemanagerlink").onclick = popupSourcemanager;
 function popupSourcemanager(){
     $('#sourcemanager').modal();
 }
-//新增源
-document.getElementById("addsourcetrigger").onclick = addsource;
-function addsource(){
-    document.getElementById("addsourcetrigger").style.display = "none";
-    document.getElementById("addsourceurl").style.display = "inherit";
-    document.getElementById("addsourcesave").style.display = "inherit";
+//新增源界面进入
+document.getElementById("addAtomSourceLink").onclick = goToAddAtomSource;
+function goToAddAtomSource(){
+    document.getElementById("atomList").style.display = "none";
+    document.getElementById("sourcemanager_footerbutton").style.display = "none";
+    document.getElementById("add_detil").style.display = "inherit";
 }
-document.getElementById("addsourcesave").onclick = addsourcesave;
-function addsourcesave(){
-    document.getElementById("addsourcetrigger").style.display = "inherit";
-    document.getElementById("addsourceurl").style.display = "none";
-    document.getElementById("addsourcesave").style.display = "none";
+//新增源界面退出
+document.getElementById("addsource_back").onclick = goToAtomSourceList;
+function goToAtomSourceList(){
+    document.getElementById("atomList").style.display = "inherit";
+    document.getElementById("sourcemanager_footerbutton").style.display = "inherit";
+    document.getElementById("add_detil").style.display = "none";
 }
+//正在处理
+document.getElementById("addsource_submit").onclick = submitting;
+function submitting(){
+    document.getElementById("addsource_form").disabled = true;
+}
+
+//偏好设置弹出框相关
+//打开框
+document.getElementById("preferenceLink").onclick = popupPreference;
+function popupPreference(){
+    $('#preferencemodal').modal();
+}
+
 
 //进入文章详细页
 function intoArticle(articleID){ //articleID 为文章 ID

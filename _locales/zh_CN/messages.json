@@ -25,7 +25,7 @@
     "initGuide_description":{
       "message":"是一款 RSS 阅读器<br />我们希望它可以带给你一些不一样的阅读体验"
     },
-    "initGuide_whatsyourname":{
+    "whatsyourname":{
         "message":"请问该如何称呼？"
     },
     "initGuide_continue":{
@@ -70,6 +70,15 @@
     "save":{
         "message":"保存"
     },
+    "done":{
+        "message":"完成"
+    },
+    "submit":{
+        "message":"提交"
+    },
+    "back":{
+        "message":"返回"
+    },
     "cancel":{
         "message":"取消"
     },
@@ -93,5 +102,8 @@
     },
     "usingThisApp":{
         "message":"以及正在使用这款应用的"
+    },
+    "nickname":{
+        "message":"昵称"
     }
 }

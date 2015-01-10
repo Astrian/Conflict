@@ -24,7 +24,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ <span class="nickname"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a id="message_refresh"></a></li>
-                                    <li><a id="message_preference"></a></li>
+                                    <li onclick="popupPreference" id="preferenceLink"><a id="message_preference"></a></li>
                                     <li onclick="popupSourcemanager" id="sourcemanagerlink"><a id="message_atomManager"></a></li>
                                     <li class="divider"></li>
                                     <li onclick="popupAbout" id="aboutlink"><a id="message_about"></a></li>
@@ -50,8 +50,8 @@
             
             <div class="card">
                 <div class="cardcontent">
-                    <h1 id="articledetil-title">「2014」过去一年，这些网站的用户信息被黑客拿到了</h1>
-                    <small>3小时前 · 李硕明 夏雨青 崔绮雯 · 好奇心日报</small>
+                    <h1 id="articledetil-title"></h1>
+                    <small></small>
                     <div class="articleContent" id="articledetil-content"></div>
                 </div>
             </div>
@@ -85,14 +85,14 @@
         </div>
         
         <!--源管理弹出框-->
-        <div class="modal fade" id="sourcemanager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="sourcemanager">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="message_sourcemanager">源管理</h4>
+                        <h4 class="modal-title"><span id="message_atomManager_title"></span></h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="atomList">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -101,20 +101,65 @@
                                     <th id="message_options"></th>
                                 </tr>
                             </thead>
-                            <tbody id="feedManagement"></tbody>
+                            <tbody>
+                                <tr></tr>
+                            </tbody>
                         </table>
-                        <button type="button" class="btn btn-default" id="addsourcetrigger"><span id="message_addAtomSource"></span></button>
-                        <div class="col-xs-10" id="addsourceurl" style="display:none;"><input id="addSourceUrl" type="url" class="form-control" placeholder='http://www.example.com/feed'></div>
-                        <button type="button" class="btn btn-success" id="addsourcesave" onclick="addsourcesave" style="display:none;"><span id="message_add"></button>
+                        <button type="button" id="addAtomSourceLink" class="btn btn-default"><span id="message_addAtomSource" onclick="goToAddAtomSource"></span></button>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                    <div class="modal-body" id="add_detil" style="display:none;">
+                        <form role="form">
+                            <fieldset id="addsource_form">
+                                <div class="form-group">
+                                    <label for="sourceName"><span id="message_atomSourceName_add"></span></label>
+                                    <input type="text" class="form-control" id="sourceName" placeholder="My RSS Source">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sourceURL"><span id="message_atomSourceURL_add"></span></label>
+                                    <input type="url" class="form-control" id="sourceURL" placeholder="http://www.example.com/feed">
+                                </div>
+                                <div class="pull-right">
+                                <button type="submit" class="btn btn-primary" id="addsource_submit" onclick="submitting"><span id="message_addsource_submit"></span></button>
+                                </div>
+                                <button class="btn btn-default" id="addsource_back" onclick="goToAtomSourceList"><span id="message_addsource_back"></span></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="modal-footer" id="sourcemanager_footerbutton">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><span id="message_done"></span></button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        
+        <!--偏好设置弹出框-->
+        <div class="modal fade" id="preferencemodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title"><span id="message_preference_title"></span></h4>
+                    </div>
+                    <div class="modal-body" id="atomList">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#"><span id="message_nickname"></span></a></li>
+                        </ul>
                         
+                        <div id="preference_nickname" class="preference_item">
+                            <div class="form-group">
+                                <label for="nickname_input"><span id="message_whatsyourname"></span></label>
+                                <input type="username" class="form-control" id="nickname_input">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    
+                    <div class="modal-footer" id="sourcemanager_footerbutton">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span id="message_cancel"></span></button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><span id="message_save"></span></button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         
         <div class="bottom"></div>
         

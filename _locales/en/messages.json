@@ -28,7 +28,7 @@
       "message":"LightRead is a RSS reader<br />We hope it can bring you a reading goodtime.",
       "description":"Introduction to LightRead."
     },
-    "initGuide_whatsyourname":{
+    "whatsyourname":{
         "message":"How can I call you?",
         "description":"Request for user's nickname."
     },
@@ -88,6 +88,10 @@
         "message":"Save",
         "description":"The save operation."
     },
+    "done":{
+        "message":"Done",
+        "description":"The done option"
+    },
     "cancel":{
         "message":"Cancel",
         "description":"The cancel operation."
@@ -120,5 +124,9 @@
     "usingThisApp":{
         "message":"... and the man that using this app now",
         "description":"Thanks to the user"
+    },
+    "nickname":{
+        "message":"Nickname",
+        "description":"User's name or allowed nickname"
     }
 }
