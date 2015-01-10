@@ -25,6 +25,11 @@ document.getElementById("sourcemanagerlink").onclick = popupSourcemanager;
 function popupSourcemanager(){
     $('#sourcemanager').modal();
 }
+//点击了某一项删除
+document.getElementById("delete-listid-button").onclick = confirmDelete;
+function confirmDelete(){
+    document.getElementById("delete-listid").innerHTML = '<button type="button" class="btn btn-danger btn-xs">Confirm Delete</button>';
+}
 //新增源界面进入
 document.getElementById("addAtomSourceLink").onclick = goToAddAtomSource;
 function goToAddAtomSource(){
