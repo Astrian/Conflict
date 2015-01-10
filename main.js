@@ -1,15 +1,15 @@
-var createDom=function(nameX,classX,innerHTMLX){
+var createDom=function(domName,domClass,domHtml){
 	if(arguments.length<2)
-		var classX="";
+		var domClass="";
 	if(arguments.length<3)
-		var innerHTMLX="";
-	var R=document.createElement(nameX);
-	R.className=classX;
-	R.innerHTML=innerHTMLX;
-	return R;
+		var domHtml="";
+	var r=document.createElement(domName);
+	r.className=domClass;
+	r.innerHTML=domHtml;
+	return r;
 }
 var createList=function(title,source,time,author){
-	var R=createDom("div","card card-head");
+	var r=createDom("div","card card-head");
 	var c=createDom("div","cardcontent");
 	var list=createDom("h3","list-title",title);
 
@@ -19,7 +19,7 @@ var createList=function(title,source,time,author){
 	var span2=createDom("span","list-time",time);
 	var span3=createDom("span","author",author);
 
-	R.appendChild(c);
+	r.appendChild(c);
 	c.appendChild(list);
 	c.appendChild(small);
 	small.appendChild(span1);
@@ -28,7 +28,30 @@ var createList=function(title,source,time,author){
 	small.innerHTML=small.innerHTML+("&#8226");
 	small.appendChild(span3);
 
-	return R;
+	return r;
+}
+
+var createFeedList=function(name,url){
+	var r=createDom("tr");
+
+	var feedName=createDom("td","feed-name",name);
+	var feedUrl=createDom("td","feed-url",url);
+	var feedOptions=createDom("td","feed-options");
+
+	var options=createDom("span","glyphicon glyphicon-pencil");
+	var del=createDom("span","glyphicon glyphicon-trash");
+
+	options.title="编辑";
+	del.title="删除";
+
+	r.appendChild(feedName);
+	r.appendChild(feedUrl);
+	r.appendChild(feedOptions);
+	feedOptions.appendChild(options);
+	feedOptions.innerHTML=feedOptions.innerHTML+" ";
+	feedOptions.appendChild(del);
+
+	return r;
 }
 
 var write=function(txt){
@@ -43,3 +66,5 @@ testData=[
 ]
 
 write(testData);
+
+document.getElementById("feedManagement").appendChild(createFeedList("123","456"));
