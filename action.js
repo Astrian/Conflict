@@ -53,7 +53,12 @@ function goToAtomSourceList(){
 //正在处理
 document.getElementById("addsource_submit").onclick = submitting;
 function submitting(){
-    document.getElementById("addsource_form").disabled = true;
+    //document.getElementById("addsource_form").disabled = true; //系统处理的时候禁用相应表单
+    
+    //应某人要求补充以下代码……
+    document.getElementById("atomList").style.display = "inherit";
+    document.getElementById("sourcemanager_footerbutton").style.display = "inherit";
+    document.getElementById("add_detil").style.display = "none";
 }
 
 //偏好设置弹出框相关
