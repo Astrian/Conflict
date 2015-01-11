@@ -41,13 +41,12 @@ tcp.onReceiveError.addListener(function(info){
 
 				tcp.close(info.socketId);
 
-				console.log(resultCounter==getJSONLength(source));
 				if(resultCounter==getJSONLength(source)){
 					var message={
 						'action':'cacheOK'
 					}
-					chrome.runtime.sendMessage(message);
 					resultCounter=0;
+					chrome.runtime.sendMessage(message);
 				}
 				return;
 			}

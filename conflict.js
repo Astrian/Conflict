@@ -50,6 +50,14 @@ var e=function(message,sender,sendResponse){
 			chrome.runtime.sendMessage(message);
 		});
 	}
+	if(message.action=="delRssSource"){
+		rmRss("source",message.name,function(){
+			local.get('source',function(data){
+				source=JSON.parse(data.source);
+				requestAllRss(data);
+			});
+		})
+	}
 }
 
 var loadRssTitle=function(obj,name){
@@ -92,12 +100,15 @@ var getRssTitle=function(xml,obj,name){
 
 	if(counter!=getJSONLength(source))
 		return;
+
+	counter=0;
 	
 	var message={
 		'action':'getRssTitleR',
 		'data':data
 	}
 	chrome.runtime.sendMessage(message);
+	data=[];
 }
 
 chrome.runtime.onMessage.addListener(e);

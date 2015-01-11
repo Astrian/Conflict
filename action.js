@@ -28,7 +28,7 @@ function popupSourcemanager(){
     $('#sourcemanager').modal();
 }
 //点击了某一项删除
-document.getElementById("delete-listid-button").onclick = confirmDelete;
+//document.getElementById("delete-listid-button").onclick = confirmDelete;
 function confirmDelete(){
     document.getElementById("delete-listid").innerHTML = '<button type="button" class="btn btn-danger btn-xs">Confirm Delete</button> <button type="button" class="btn btn-default  btn-xs" id="canceldelete">Cancel</button>';
     document.getElementById("canceldelete").onclick = cancelDelete;
@@ -87,5 +87,3 @@ function backtolist(){ //articleID 为文章 ID
     document.getElementById("back").style.display = "none";
     document.getElementById("mainmenubutton").style.display="inherit"
 }
-
-console.log(chrome.i18n.getMessage("refresh"));

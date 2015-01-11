@@ -36,45 +36,112 @@ var createFeedList=function(name,url){
 
 	var feedName=createDom("td","feed-name",name);
 	var feedUrl=createDom("td","feed-url",url);
-	var feedOptions=createDom("td","feed-options");
+	var feedDelete=createDom("td");
 
-	var options=createDom("span","glyphicon glyphicon-pencil");
-	var del=createDom("span","glyphicon glyphicon-trash");
+	var deleteListid=createDom("a");
+	deleteListid.id="delete-listid-button";
+	deleteListid.href="#";
 
-	options.title="编辑";
-	del.title="删除";
+	var glyphicon=createDom("span","glyphicon glyphicon-trash");
+	glyphicon.title="删除";
+	glyphicon.onclick=glyDel;
 
 	r.appendChild(feedName);
 	r.appendChild(feedUrl);
-	r.appendChild(feedOptions);
-	feedOptions.appendChild(options);
-	feedOptions.innerHTML=feedOptions.innerHTML+" ";
-	feedOptions.appendChild(del);
+	r.appendChild(feedDelete);
+	feedDelete.appendChild(deleteListid);
+	deleteListid.appendChild(glyphicon);
 
 	return r;
 }
 
-var write=function(data){
-	var list=document.getElementById("list");
-	for(var i=0;i<data.length;i++)
-		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author));
+var glyDel=function(){
+	var del=createDom("button","btn btn-danger btn-xs","Confirm Delete");
+	del.type="button";
+	del.onclick=function(){
+		var message={
+			"action":"delRssSource",
+			"name":this.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].nodeValue
+		};
+		chrome.runtime.sendMessage(message);
+	};
+
+	var cancel=createDom("button","btn btn-default  btn-xs","Cancel");
+	cancel.type="button";
+	cancel.onclick=glyCancel;
+
+	var parent=this.parentNode;
+	rmAllChind(parent);
+	parent.appendChild(cancel);
+	parent.appendChild(del);
 }
 
-var add=function(){
-	var url = document.getElementById("addSourceUrl").value;
+var glyCancel=function(){
+	var parent=this.parentNode;
+	rmAllChind(parent);
+
+	var glyphicon=createDom("span","glyphicon glyphicon-trash");
+	glyphicon.title="删除";
+	glyphicon.onclick=glyDel;
+
+	parent.appendChild(glyphicon);
+}
+
+var writeList=function(data){
+	var list=document.getElementById("list");
+	rssTitleSort(data);
+	for(var i=0;i<data.length;i++){
+		data[i].pubDate=getDateShow(data[i].pubDate);
+		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author));
+	}
+}
+
+var getDateShow=function(data){
+	var r=new Date(data);
+	return r.toUTCString();
+}
+
+var rssTitleSort=function(arr){
+	var i=arr.length,j;
+	var tempExchangVal;
+	while(i>0){
+		for(j=0;j<i-1;j++){
+			if(isDateGT(arr[j+1].pubDate,arr[j].pubDate)){
+				tempExchangVal=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=tempExchangVal;
+			}
+		}
+		i--;
+	}
+	return arr;
+}
+
+var isDateGT=function(date1,date2){
+	var d1=new Date(date1);
+	var d2=new Date(date2);
+
+	if(d1>d2)
+		return 1;
+
+	return 0;
+}
+
+var addSource=function(){
+	var url = document.getElementById("sourceURL").value;
 	url=url.slice(url.indexOf("//")+2);
 	var message={
 		"action":"addRssSource",
 		"ip":url.slice(0,url.indexOf("/")),
 		"port":"80",
 		"file":url.slice(url.indexOf("/")),
-		"name":"test",
+		"name":document.getElementById("sourceName").value,
 		"class":"test"
 	}
 	chrome.runtime.sendMessage(message);
 }
 
-var lookAllRss=function(){
+var lookAllRssSource=function(){
 	var message={
 		"action":"lookAllRssS"
 	}
@@ -89,17 +156,26 @@ var clearAlllocal=function(){
 }
 
 var updata=function(){
+	rmAllChind(document.getElementById("list"));
+	rmAllChind(document.getElementById("feedManagement"));
+
 	var message={
 		"action":"getRssTitleS"
 	}
 	chrome.runtime.sendMessage(message);
 
-	lookAllRss();
+	lookAllRssSource();
+}
+
+var rmAllChind=function(obj){
+	var child=obj.childNodes;
+	while(child.length!=0)
+		obj.removeChild(child[0]);
 }
 
 var e=function(message, sender, sendResponse){
 	if(message.action=="getRssTitleR"){
-		write(message.data);
+		writeList(message.data);
 	}
 	if(message.action=="lookAllRssR"){
 		var feed=document.getElementById("feedManagement");
@@ -107,14 +183,22 @@ var e=function(message, sender, sendResponse){
 		for(var i in data)
 			feed.appendChild(createFeedList(i,"http://"+data[i].ip+data[i].file));
 	}
-	if(message.action=="cacheOK")
+	if(message.action=="cacheOK"){
 		updata();
+	}
 }
 
 chrome.runtime.onMessage.addListener(e);
 
-document.getElementById("message_add").onclick=add;
+document.getElementById("message_addsource_submit").onclick=addSource;
 
 updata();
 
 //clearAlllocal();
+/*
+                                <tr>
+                                    <td>test</td>
+                                    <td>http://feed.test.com</td>
+                                    <td id="delete-listid"><a href="#" id="delete-listid-button"><span class="glyphicon glyphicon-trash" title="删除"></span></a></td>
+                                </tr>
+*/
