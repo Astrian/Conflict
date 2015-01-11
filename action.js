@@ -1,3 +1,4 @@
+/*
 //通知相关
 function popupNotification(){       
     document.getElementById("noti").style.top = "90%";
@@ -12,6 +13,7 @@ function closenoti(){
     document.getElementById("noti").style.webkitAnimation = "closeNotification 0.2s"; 
     $(".noti").pin();
 }
+*/
 
 //「关于」弹出框相关
 document.getElementById("aboutlink").onclick = popupAbout;
@@ -67,7 +69,6 @@ document.getElementById("preferenceLink").onclick = popupPreference;
 function popupPreference(){
     $('#preferencemodal').modal();
 }
-
 
 //进入文章详细页
 function intoArticle(articleID){ //articleID 为文章 ID

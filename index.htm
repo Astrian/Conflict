@@ -17,17 +17,17 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="backbutton" style="display:none;"><a><span class="glyphicon glyphicon-arrow-left"></span></a></li>
                             <li class="dropdown" id="mainmenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ <span class="nickname"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a id="message_refresh"></a></li>
-                                    <li onclick="popupPreference" id="preferenceLink"><a id="message_preference"></a></li>
-                                    <li onclick="popupSourcemanager" id="sourcemanagerlink"><a id="message_atomManager"></a></li>
+                                    <li id="preferenceLink"><a id="message_preference"></a></li>
+                                    <li id="sourcemanagerlink"><a id="message_atomManager"></a></li>
                                     <li class="divider"></li>
-                                    <li onclick="popupAbout" id="aboutlink"><a id="message_about"></a></li>
+                                    <li id="aboutlink"><a id="message_about"></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -38,9 +38,9 @@
             </div>
         </nav>
         
-        <div class="noti" id="noti">
+        <div class="noti">
                 <div class="notibox">
-                    <p class="noticontent" id="noticontent">已将该文章标记星标。 <a href="#" id="closenoti" onclick="closenoti">关闭</a></p>
+                    <p class="noticontent">已将该文章标记星标。 <a href="#">关闭</a></p>
                 </div>
             </div>
         
@@ -50,9 +50,9 @@
             
             <div class="card">
                 <div class="cardcontent">
-                    <h1 id="articledetil-title"></h1>
+                    <h1></h1>
                     <small></small>
-                    <div class="articleContent" id="articledetil-content"></div>
+                    <div class="articleContent"></div>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         
         
         <!--关于弹出框-->
-        <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="about">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -105,7 +105,7 @@
                                 <tr>
                                     <td>test</td>
                                     <td>http://feed.test.com</td>
-                                    <td id="delete-listid"><a href="#" id="delete-listid-button" onclick="confirmDelete"><span class="glyphicon glyphicon-trash" title="删除"></span></a></td>
+                                    <td id="delete-listid"><a href="#" id="delete-listid-button"><span class="glyphicon glyphicon-trash" title="删除"></span></a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -123,9 +123,9 @@
                                     <input type="url" class="form-control" id="sourceURL" placeholder="http://www.example.com/feed">
                                 </div>
                                 <div class="pull-right">
-                                <button type="submit" class="btn btn-primary" id="addsource_submit" onclick="submitting"><span id="message_addsource_submit"></span></button>
+                                <button type="submit" class="btn btn-primary" id="addsource_submit"><span id="message_addsource_submit"></span></button>
                                 </div>
-                                <button class="btn btn-default" id="addsource_back" onclick="goToAtomSourceList" target="_blank"><span id="message_addsource_back"></span></button>
+                                <button class="btn btn-default" id="addsource_back" target="_blank"><span id="message_addsource_back"></span></button>
                             </fieldset>
                         </form>
                     </div>
@@ -149,7 +149,7 @@
                             <li role="presentation" class="active"><a href="#"><span id="message_nickname"></span></a></li>
                         </ul>
                         
-                        <div id="preference_nickname" class="preference_item">
+                        <div class="preference_item">
                             <div class="form-group">
                                 <label for="nickname_input"><span id="message_whatsyourname"></span></label>
                                 <input type="username" class="form-control" id="nickname_input">
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     
-                    <div class="modal-footer" id="sourcemanager_footerbutton">
+                    <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal"><span id="message_cancel"></span></button>
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><span id="message_save"></span></button>
                     </div>
