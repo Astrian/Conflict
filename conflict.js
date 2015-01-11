@@ -51,6 +51,7 @@ var e=function(message,sender,sendResponse){
 		});
 	}
 	if(message.action=="delRssSource"){
+		local.remove(message.name);
 		rmRss("source",message.name,function(){
 			local.get('source',function(data){
 				source=JSON.parse(data.source);
