@@ -195,10 +195,3 @@ document.getElementById("message_addsource_submit").onclick=addSource;
 updata();
 
 //clearAlllocal();
-/*
-                                <tr>
-                                    <td>test</td>
-                                    <td>http://feed.test.com</td>
-                                    <td id="delete-listid"><a href="#" id="delete-listid-button"><span class="glyphicon glyphicon-trash" title="删除"></span></a></td>
-                                </tr>
-*/
