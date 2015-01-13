@@ -3,7 +3,7 @@
     "description": "__MSG_appDescription__",
     "version": "0.1.0.0",
     "permissions": [
-        "storage"
+        "storage","http://*/"
     ],
     "sockets": {
         "tcp": {

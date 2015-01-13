@@ -8,7 +8,7 @@ var createDom=function(domName,domClass,domHtml){
 	r.innerHTML=domHtml;
 	return r;
 }
-var createList=function(title,source,time,author,description){
+var createList=function(title,source,time,author,description,link){
 	var r=createDom("div","card card-head");
 	var c=createDom("div","cardcontent");
 	var list=createDom("h3","list-title",title);
@@ -29,9 +29,47 @@ var createList=function(title,source,time,author,description){
 	small.appendChild(span3);
 
 	r.onclick=intoArticle;
-	r["description"]=description;
+	r["description"]=descriptionChange(description);
+	r["link"]=link;
 
 	return r;
+}
+
+var imgArr=Array();
+
+var descriptionChange=function(description){
+	var r=description;
+
+	r=r.replace(/target="_blank"/g,"");
+	r=r.replace(/<a/g,"<a target=\"_blank\"");
+
+	var div=document.createElement("div");
+	div.innerHTML=r;
+
+	var img=div.getElementsByTagName("img");
+
+	if(img.length==0)
+		return div;
+	
+	for(var i=0;i<img.length;i++){
+		var xhr = new XMLHttpRequest();
+		imgArr.push(img[i]);
+		xhr.open('GET', img[i].src, true);
+		xhr.responseType = 'blob';
+		xhr.onload = function(e) {
+			for(var i=0;i<imgArr.length;i++)
+				if(e.currentTarget.responseURL==imgArr[i].src){
+					var newImg = document.createElement('img');
+					newImg.src = window.URL.createObjectURL(this.response);
+					imgArr[i].parentNode.replaceChild(newImg,imgArr[i]);
+					imgArr.splice(i,1);
+				}
+		};
+
+		xhr.send();
+	}
+
+	return div;
 }
 
 var createFeedList=function(name,url){
@@ -95,7 +133,7 @@ var writeList=function(data){
 	rssTitleSort(data);
 	for(var i=0;i<data.length;i++){
 		data[i].pubDate=getDateShow(data[i].pubDate);
-		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author,data[i].description));
+		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author,data[i].description,data[i].link));
 	}
 }
 
@@ -201,3 +239,15 @@ document.getElementById("message_addsource_submit").onclick=addSource;
 updata();
 
 //clearAlllocal();
+
+/*var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://yui-nya.com/wp-content/uploads/2015/01/834591.jpg', true);
+xhr.responseType = 'blob';
+xhr.onload = function(e) {
+    var img = document.createElement('img');
+    img.src = window.URL.createObjectURL(this.response);
+    document.body.appendChild(img);
+};
+
+xhr.send();
+*/

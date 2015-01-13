@@ -73,7 +73,8 @@ function popupPreference(){
 //进入文章详细页
 function intoArticle(){ //articleID 为文章 ID
     document.getElementById("articledetil-title").innerHTML = this.getElementsByClassName("list-title")[0].childNodes[0].nodeValue;
-    document.getElementById("articledetil-content").innerHTML = this.description;
+    document.getElementById("articledetil").appendChild(this.description);
+    document.getElementById("articledetilLink").href=this.link;
     document.getElementById("list").style.display = "none";
     document.getElementById("article-detil").style.display = "inherit";
     document.getElementById("mainmenu").style.display = "none";
@@ -83,6 +84,7 @@ function intoArticle(){ //articleID 为文章 ID
 //返回文章列表
 document.getElementById("backbutton").onclick=backtolist;
 function backtolist(){ 
+    document.getElementById("articledetil").removeChild(document.getElementById("articledetil").lastChild);
     document.getElementById("article-detil").style.display = "none";
     document.getElementById("list").style.display = "inherit";
     document.getElementById("backbutton").style.display = "none";
