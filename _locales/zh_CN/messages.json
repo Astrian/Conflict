@@ -105,5 +105,11 @@
     },
     "nickname":{
         "message":"昵称"
+    },
+    "URL_Illegal":{
+        "message":"输入的 RSS 源 URL 无法被识别。请注意轻读目前无法识别页面上的 RSS 源地址，还请直接输入源的 URL。"
+    },
+    "Name_AlreadyExists":{
+        "message":"这个名字撞车了，换一个吧。"
     }
 }

@@ -87,3 +87,16 @@ function backtolist(){ //articleID 为文章 ID
     document.getElementById("back").style.display = "none";
     document.getElementById("mainmenubutton").style.display="inherit"
 }
+
+
+//错误示例
+document.getElementById("errorexample").onclick = errorexample;
+function errorexample(){
+    //将状态修正为错误
+    document.getElementById("sourceNameGroup").className = "form-group has-error";
+     document.getElementById("sourceURLGroup").className = "form-group has-error";
+    
+    //添加错误信息
+    document.getElementById("sourceNameErrorInfo").innerHTML = chrome.i18n.getMessage("Name_AlreadyExists");
+    document.getElementById("sourceURLErrorInfo").innerHTML = chrome.i18n.getMessage("URL_Illegal");
+}

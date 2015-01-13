@@ -108,39 +108,21 @@
                     <div class="modal-body" id="add_detil" style="display:none;">
                         <form role="form">
                             <fieldset id="addsource_form">
-                                <div class="form-group">
+                                <div class="form-group" id="sourceNameGroup">
                                     <label for="sourceName"><span id="message_atomSourceName_add"></span></label>
                                     <input type="text" class="form-control" id="sourceName" placeholder="My RSS Source">
+                                    <p class="help-block" id="sourceNameErrorInfo"></p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="sourceURLGroup">
                                     <label for="sourceURL"><span id="message_atomSourceURL_add"></span></label>
                                     <input type="url" class="form-control" id="sourceURL" placeholder="http://www.example.com/feed">
+                                    <p class="help-block" id="sourceURLErrorInfo"></p>
                                 </div>
                                 <div class="pull-right">
-                                <button type="submit" class="btn btn-primary" id="addsource_submit"><span id="message_addsource_submit"></span></button>
+                                    <button type="submit" class="btn btn-danger" id="errorexample">Error Example</button>
+                                    <button type="submit" class="btn btn-primary" id="addsource_submit"><span id="message_addsource_submit"></span></button>
                                 </div>
                                 <button class="btn btn-default" id="addsource_back"><span id="message_addsource_back"></span></button>
-                            </fieldset>
-                        </form>
-                        
-                        <p><small>//以下是测试内容</small></p>
-                        <form role="form">
-                            <fieldset>
-                                <div class="form-group has-success">
-                                    <label class="control-label" for="inputSuccess1">成功</label>
-                                    <input type="text" class="form-control" id="inputSuccess1">
-                                    <p class="help-block">提示信息</p>
-                                </div>
-                                <div class="form-group has-warning">
-                                    <label class="control-label" for="inputWarning1">警告</label>
-                                    <input type="text" class="form-control" id="inputWarning1">
-                                    <p class="help-block">提示信息</p>
-                                </div>
-                                <div class="form-group has-error">
-                                    <label class="control-label" for="inputError1">错误</label>
-                                    <input type="text" class="form-control" id="inputError1">
-                                    <p class="help-block">提示信息</p>
-                                </div>
                             </fieldset>
                         </form>
                     </div>

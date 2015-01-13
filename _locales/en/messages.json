@@ -128,5 +128,11 @@
     "nickname":{
         "message":"Nickname",
         "description":"User's name or allowed nickname"
+    },
+    "URL_Illegal":{
+        "message":"This RSS source cannot be recognized. Notice that LightRead cannot recognized the RSS link on the webpage, you should input the source URL directly."
+    },
+    "Name_AlreadyExists":{
+        "message":"The name is already exists, you may can try a different one."
     }
 }
