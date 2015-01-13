@@ -78,15 +78,15 @@ function intoArticle(){ //articleID 为文章 ID
     document.getElementById("list").style.display = "none";
     document.getElementById("article-detil").style = "inherit";
     document.getElementById("mainmenu").style.display = "none";
-    document.getElementById("backbutton").style.display="inherit"
+    document.getElementById("backbutton").style.display="inherit";
 }
 
 //返回文章列表
-function backtolist(){ //articleID 为文章 ID
+function backtolist(){ 
     document.getElementById("article-detil").style.display = "none";
-    document.getElementById("list").style = "inherit";
+    document.getElementById("list").style.display = "inherit";
     document.getElementById("back").style.display = "none";
-    document.getElementById("mainmenubutton").style.display="inherit"
+    document.getElementById("mainmenu").style.display="inherit";
 }
 
 
