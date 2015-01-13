@@ -76,7 +76,7 @@ function intoArticle(){ //articleID 为文章 ID
     document.getElementById("articledetil-title").innerHTML = "文章名称，请从 RSS 中抓取";
     document.getElementById("articledetil-content").innerHTML = "文章内容，请从 RSS 中抓取";
     document.getElementById("list").style.display = "none";
-    document.getElementById("article-detil").style = "inherit";
+    document.getElementById("article-detil").style.display = "inherit";
     document.getElementById("mainmenu").style.display = "none";
     document.getElementById("backbutton").style.display="inherit";
 }
