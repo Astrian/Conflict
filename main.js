@@ -28,6 +28,8 @@ var createList=function(title,source,time,author){
 	small.innerHTML=small.innerHTML+("&#8226");
 	small.appendChild(span3);
 
+	r.onclick=intoArticle;
+
 	return r;
 }
 

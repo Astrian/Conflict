@@ -71,7 +71,8 @@ function popupPreference(){
 }
 
 //进入文章详细页
-function intoArticle(articleID){ //articleID 为文章 ID
+function intoArticle(){ //articleID 为文章 ID
+    console.log(document.getElementById("articledetil-content"));
     document.getElementById("articledetil-title").innerHTML = "文章名称，请从 RSS 中抓取";
     document.getElementById("articledetil-content").innerHTML = "文章内容，请从 RSS 中抓取";
     document.getElementById("list").style.display = "none";
@@ -94,7 +95,7 @@ document.getElementById("errorexample").onclick = errorexample;
 function errorexample(){
     //将状态修正为错误
     document.getElementById("sourceNameGroup").className = "form-group has-error";
-     document.getElementById("sourceURLGroup").className = "form-group has-error";
+    document.getElementById("sourceURLGroup").className = "form-group has-error";
     
     //添加错误信息
     document.getElementById("sourceNameErrorInfo").innerHTML = chrome.i18n.getMessage("Name_AlreadyExists");
