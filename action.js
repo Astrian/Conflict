@@ -72,20 +72,20 @@ function popupPreference(){
 
 //进入文章详细页
 function intoArticle(){ //articleID 为文章 ID
-    console.log(document.getElementById("articledetil-content"));
-    document.getElementById("articledetil-title").innerHTML = "文章名称，请从 RSS 中抓取";
-    document.getElementById("articledetil-content").innerHTML = "文章内容，请从 RSS 中抓取";
+    document.getElementById("articledetil-title").innerHTML = this.getElementsByClassName("list-title")[0].childNodes[0].nodeValue;
+    document.getElementById("articledetil-content").innerHTML = this.description;
     document.getElementById("list").style.display = "none";
-    document.getElementById("article-detil").style = "inherit";
+    document.getElementById("article-detil").style.display = "inherit";
     document.getElementById("mainmenu").style.display = "none";
     document.getElementById("backbutton").style.display="inherit";
 }
 
 //返回文章列表
+document.getElementById("backbutton").onclick=backtolist;
 function backtolist(){ 
     document.getElementById("article-detil").style.display = "none";
     document.getElementById("list").style.display = "inherit";
-    document.getElementById("back").style.display = "none";
+    document.getElementById("backbutton").style.display = "none";
     document.getElementById("mainmenu").style.display="inherit";
 }
 

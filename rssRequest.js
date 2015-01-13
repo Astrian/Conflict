@@ -34,8 +34,15 @@ tcp.onReceiveError.addListener(function(info){
 		resultCounter++;
 		for(x in source){
 			if(source[x].id==info.socketId){
+				if(source[x].xml.indexOf("HTTP/1.1 200")==-1){
+					chrome.runtime.sendMessage("action":"rssError");
+					return;
+				}
+
 				var data={};
 				data[source[x].name]=source[x].xml;
+
+				console.log(data);
 
 				local.set(data,function(){});
 

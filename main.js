@@ -8,7 +8,7 @@ var createDom=function(domName,domClass,domHtml){
 	r.innerHTML=domHtml;
 	return r;
 }
-var createList=function(title,source,time,author){
+var createList=function(title,source,time,author,description){
 	var r=createDom("div","card card-head");
 	var c=createDom("div","cardcontent");
 	var list=createDom("h3","list-title",title);
@@ -29,6 +29,7 @@ var createList=function(title,source,time,author){
 	small.appendChild(span3);
 
 	r.onclick=intoArticle;
+	r["description"]=description;
 
 	return r;
 }
@@ -94,7 +95,7 @@ var writeList=function(data){
 	rssTitleSort(data);
 	for(var i=0;i<data.length;i++){
 		data[i].pubDate=getDateShow(data[i].pubDate);
-		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author));
+		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author,data[i].description));
 	}
 }
 
@@ -186,6 +187,9 @@ var e=function(message, sender, sendResponse){
 			feed.appendChild(createFeedList(i,"http://"+data[i].ip+data[i].file));
 	}
 	if(message.action=="cacheOK"){
+		updata();
+	}
+	if(message.action=="rssError"){
 		updata();
 	}
 }
