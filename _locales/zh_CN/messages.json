@@ -111,5 +111,8 @@
     },
     "Name_AlreadyExists":{
         "message":"这个名字撞车了，换一个吧。"
+    },
+    "readmore":{
+        "message":"阅读原文"
     }
 }

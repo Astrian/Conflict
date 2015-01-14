@@ -27,3 +27,4 @@ document.getElementById("message_cancel").innerHTML = chrome.i18n.getMessage("ca
 document.getElementById("message_preference_title").innerHTML = chrome.i18n.getMessage("preference");
 document.getElementById("message_back_inBar").innerHTML = chrome.i18n.getMessage("back");
 document.getElementById("message_close_about").innerHTML = chrome.i18n.getMessage("close");
+document.getElementById("message_readmore").innerHTML = chrome.i18n.getMessage("readmore");

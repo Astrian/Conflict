@@ -107,5 +107,8 @@
     },
     "Name_AlreadyExists":{
         "message":"名字撞車了噢，試試其他的吧。"
+    },
+    "readmore":{
+        "message":"閱讀原文"
     }
 }

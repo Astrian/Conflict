@@ -136,5 +136,8 @@
     },
     "Name_AlreadyExists":{
         "message":"The name is already exists, you may can try a different one."
+    },
+    "readmore":{
+        "message":"Go to original webpage"
     }
 }
