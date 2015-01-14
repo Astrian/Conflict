@@ -112,10 +112,12 @@
       	"message":"About",
         "descrtiption":"About LightRead."
     },
-    
     "thanks":{
         "message":"Thanks",
         "description":"Say thanks to somebody."
+    },
+    "back":{
+        "message":"Back"
     },
     "thankslist":{
         "message":"Rabby Xia<br />Yui Soda<br />王元",

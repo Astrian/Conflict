@@ -25,3 +25,5 @@ document.getElementById("message_whatsyourname").innerHTML = chrome.i18n.getMess
 document.getElementById("message_save").innerHTML = chrome.i18n.getMessage("save");
 document.getElementById("message_cancel").innerHTML = chrome.i18n.getMessage("cancel");
 document.getElementById("message_preference_title").innerHTML = chrome.i18n.getMessage("preference");
+document.getElementById("message_back_inBar").innerHTML = chrome.i18n.getMessage("back");
+document.getElementById("message_close_about").innerHTML = chrome.i18n.getMessage("close");
