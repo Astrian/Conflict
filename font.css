@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Roboto';
     font-weight: 100;
-    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+    src: url('./fonts/Roboto-Thin.ttf') format('truetype');
 }
 
 <!-- Thin Italic -->
@@ -10,14 +10,14 @@
     font-family: 'Roboto';
     font-weight: 100;
     font-style: italic;
-    src: url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-ThinItalic.ttf') format('truetype');
 }
 
 <!-- Light -->
 @font-face {
     font-family: 'Roboto';
     font-weight: 300;
-    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    src: url('./fonts/Roboto-Light.ttf') format('truetype');
 }
 
 <!-- Light Italic -->
@@ -25,14 +25,14 @@
     font-family: 'Roboto';
     font-weight: 300;
     font-style: italic;
-    src: url('../fonts/Roboto-LightItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-LightItalic.ttf') format('truetype');
 }
 
 <!-- Normal -->
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 <!-- Normal Italic -->
@@ -40,14 +40,14 @@
     font-family: 'Roboto';
     font-weight: 400;
     font-style: italic;
-    src: url('../fonts/Roboto-RegularItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-RegularItalic.ttf') format('truetype');
 }
 
 <!-- Medium -->
 @font-face {
     font-family: 'Roboto';
     font-weight: 500;
-    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    src: url('./fonts/Roboto-Medium.ttf') format('truetype');
 }
 
 <!-- Medium Italic -->
@@ -55,14 +55,14 @@
     font-family: 'Roboto';
     font-weight: 500;
     font-style:italic;
-    src: url('../fonts/Roboto-MediumItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-MediumItalic.ttf') format('truetype');
 }
 
 <!-- Bold -->
 @font-face {
     font-family: 'Roboto';
     font-weight: 700;
-    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
 }
 
 <!-- Bold Italic -->
@@ -70,14 +70,14 @@
     font-family: 'Roboto';
     font-weight: 700;
     font-style:italic;
-    src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-BoldItalic.ttf') format('truetype');
 }
 
 <!-- Ultra-Bold -->
 @font-face {
     font-family: 'Roboto';
     font-weight: 900;
-    src: url('../fonts/Roboto-Black.ttf') format('truetype');
+    src: url('./fonts/Roboto-Black.ttf') format('truetype');
 }
 
 <!-- Ultra-Bold Italic -->
@@ -85,6 +85,6 @@
     font-family: 'Roboto';
     font-weight: 900;
     font-style:italic;
-    src: url('../fonts/Roboto-BlackItalic.ttf') format('truetype');
+    src: url('./fonts/Roboto-BlackItalic.ttf') format('truetype');
 }
 
