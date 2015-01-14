@@ -230,24 +230,20 @@ var e=function(message, sender, sendResponse){
 	if(message.action=="rssError"){
 		updata();
 	}
+	if(message.action=="initR"){
+		document.getElementById("showNickName").innerHTML=message.name;
+		chrome.runtime.sendMessage({"action":"cache"});
+	}
 }
 
 chrome.runtime.onMessage.addListener(e);
 
 document.getElementById("message_addsource_submit").onclick=addSource;
 
-updata();
+chrome.runtime.sendMessage({"action":"init"});
+
+document.getElementById("message_refresh").onclick=function(){
+	chrome.runtime.sendMessage({"action":"cache"});
+}
 
 //clearAlllocal();
-
-/*var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://yui-nya.com/wp-content/uploads/2015/01/834591.jpg', true);
-xhr.responseType = 'blob';
-xhr.onload = function(e) {
-    var img = document.createElement('img');
-    img.src = window.URL.createObjectURL(this.response);
-    document.body.appendChild(img);
-};
-
-xhr.send();
-*/

@@ -1,14 +1,26 @@
-chrome.app.runtime.onLaunched.addListener(function() {
-    chrome.app.window.create('index.htm', {
-        id:"Conflict",
-        'bounds': {
-            'width': 1200,
-            'height': 800
-        }
-    });
-});
-
 var e=function(message,sender,sendResponse){
+	if(message.action=="start"){
+		local.set({'name':message.name},function(){});
+		chrome.app.window.create('index.htm', {
+		        id:"Conflict",
+		        'bounds': {
+		            'width': 1200,
+		            'height': 800
+		        }
+		    });
+	}
+	if(message.action=="init"){
+		local.get('name',function(data){
+			var message={
+				"action":"initR",
+				"name":data.name
+			}
+			local.get('source',function(data){
+				source=JSON.parse(data.source);
+			});
+			chrome.runtime.sendMessage(message);
+		});
+	}
 	if(message.action=='cache'){
 		local.get('source',function(data){
 			requestAllRss(data);
@@ -21,7 +33,7 @@ var e=function(message,sender,sendResponse){
 	}
 	if(message.action=='clearAlllocal'){
 		clearAlllocal();
-		local.set({'source':'{}'},function(){});
+		//local.set({'source':'{}'},function(){});
 	}
 	if(message.action=='subRss'){
 		rmRss('source',message.name,function(){});

@@ -3,3 +3,16 @@ document.getElementById("message_welcome").innerHTML = chrome.i18n.getMessage("i
 document.getElementById("message_description").innerHTML = chrome.i18n.getMessage("initGuide_description");
 document.getElementById("message_whatsyourname").innerHTML = chrome.i18n.getMessage("whatsyourname");
 document.getElementById("message_continue").innerHTML = chrome.i18n.getMessage("initGuide_continue");
+document.getElementById("message_continue").onclick=function(argument) {
+	var message={
+		"action":"start",
+		"name":document.getElementById("nickname").value,
+	}
+
+	if(message.name=="")
+		return;
+
+	chrome.app.window.current().close();
+
+	chrome.runtime.sendMessage(message);
+}
