@@ -1,4 +1,15 @@
 var e=function(message,sender,sendResponse){
+	if(message.action=="setName"){
+		local.set({'name':message.name},function(){
+			local.get('name',function(data){
+				var message={
+					"action":"initR",
+					"name":data.name
+				}
+				chrome.runtime.sendMessage(message);
+			});
+		});
+	}
 	if(message.action=="start"){
 		local.set({'name':message.name},function(){});
 		chrome.app.window.create('index.htm', {
@@ -15,10 +26,10 @@ var e=function(message,sender,sendResponse){
 				"action":"initR",
 				"name":data.name
 			}
-			local.get('source',function(data){
-				source=JSON.parse(data.source);
-			});
 			chrome.runtime.sendMessage(message);
+		});
+		local.get('source',function(data){
+			source=JSON.parse(data.source);
 		});
 	}
 	if(message.action=='cache'){

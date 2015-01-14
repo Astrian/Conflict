@@ -232,6 +232,7 @@ var e=function(message, sender, sendResponse){
 	}
 	if(message.action=="initR"){
 		document.getElementById("showNickName").innerHTML=message.name;
+		document.getElementById("nickname_input").value=message.name;
 		chrome.runtime.sendMessage({"action":"cache"});
 	}
 }
@@ -244,6 +245,18 @@ chrome.runtime.sendMessage({"action":"init"});
 
 document.getElementById("message_refresh").onclick=function(){
 	chrome.runtime.sendMessage({"action":"cache"});
+}
+
+document.getElementById("message_save").onclick=function(){
+	var message={
+		"action":"setName",
+		"name":document.getElementById("nickname_input").value,
+	}
+
+	if(message.name=="")
+		return;
+
+	chrome.runtime.sendMessage(message);
 }
 
 //clearAlllocal();
