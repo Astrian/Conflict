@@ -84,7 +84,6 @@ var createFeedList=function(name,url){
 	deleteListid.href="#";
 
 	var glyphicon=createDom("span","glyphicon glyphicon-trash");
-	glyphicon.title="删除";
 	glyphicon.onclick=glyDel;
 
 	r.appendChild(feedName);

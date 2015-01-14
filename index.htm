@@ -19,7 +19,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li id="backbutton" style="display:none;"><a><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+                            <li id="backbutton" style="display:none;"><a><span class="glyphicon glyphicon-arrow-left"></span> <span id="message_back_inBar"></span></a></li>
                             <li class="dropdown" id="mainmenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">≡ <span class="nickname"></span></a>
                                 <ul class="dropdown-menu" role="menu">
@@ -53,10 +53,21 @@
                 <div class="cardcontent" id="articledetil">
                     <h1 id="articledetil-title"></h1>
                     <small></small>
-                    <a id="articledetilLink" target="_blank">link</a>
+                    
+                </div>
+            </div>
+                
+            <div id="readmorebutton">
+                <div class="card">
+                    <div id="readmore">
+                        <a id="articledetilLink" target="_blank">
+                            <span id="message_readmore"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+            
         
         
         
@@ -76,10 +87,11 @@
                         <h3 class="text-center" id="message_thanks"></h3>
                         <p class="text-center" id="message_thankslist"></p>
                         <p class="text-center"><span id="message_usingThisApp">以及正在使用这款应用的</span><br /><span id="showNickName" class="nickname"></span></p>
+                        <p class="text-center"><span id="message_usingThisApp"></span><br /><span class="nickname"></span></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" style="display:none;" id="NightRaidButton">赤红之瞳</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><span id="message_close_about"></span></button>
                     </div>
                 </div>
             </div>
@@ -120,7 +132,6 @@
                                     <p class="help-block" id="sourceURLErrorInfo"></p>
                                 </div>
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-danger" id="errorexample">Error Example</button>
                                     <button type="submit" class="btn btn-primary" id="addsource_submit"><span id="message_addsource_submit"></span></button>
                                 </div>
                                 <button class="btn btn-default" id="addsource_back"><span id="message_addsource_back"></span></button>

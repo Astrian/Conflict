@@ -91,7 +91,7 @@ function backtolist(){
     document.getElementById("mainmenu").style.display="inherit";
 }
 
-
+/*
 //错误示例
 document.getElementById("errorexample").onclick = errorexample;
 function errorexample(){
@@ -103,3 +103,4 @@ function errorexample(){
     document.getElementById("sourceNameErrorInfo").innerHTML = chrome.i18n.getMessage("Name_AlreadyExists");
     document.getElementById("sourceURLErrorInfo").innerHTML = chrome.i18n.getMessage("URL_Illegal");
 }
+*/

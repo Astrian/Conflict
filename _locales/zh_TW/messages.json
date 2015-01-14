@@ -1,0 +1,114 @@
+{
+    "LightRead":{
+        "message":"輕讀"
+    },
+    "LightReadFullName":{
+        "message":"LightRead 輕讀"
+    },
+    "appDescription":{
+        "message":"一款 RSS 閱讀器"
+    },
+    "version":{
+        "message":"0.1.0.0 (Beta)"
+    },
+    "author":{
+        "message":"By Astrian &amp; 白羊"
+    },
+    "initGuide_Hello":{
+   	   "message":"你好"
+    },
+    "initGuide_welcome":{
+		"message":"歡迎使用輕讀"
+    },
+    "initGuide_description":{
+      "message":"輕讀是一個個人化 RSS 聚合軟體，我們期望它可以帶給你不一樣的閱讀體驗。"
+    },
+    "whatsyourname":{
+        "message":"請問你叫什麽名字？"
+    },
+    "initGuide_continue":{
+        "message":"繼續"
+    },
+    "initGuide_nicknamePlaceholder":{
+        "message":"比如：Cranky Chen"
+    },
+    "initGuide_step2title":{
+        "message":"[Nickname]，很高興遇到你！"
+    },
+    "initGuide_Step2description":{
+        "message":"現在，你可以自己增添一些 RSS 源了。"
+    },
+    "atomManager":{
+      	"message":"源管理"
+    },
+    "addAtomSource":{
+        "message":"增添源"
+    },
+    "add":{
+        "message":"增添"
+    },
+    "atomSourceName":{
+		"message":"源名字"
+    },
+    "atomSourceURL":{
+      	"message":"源地址"
+    },
+    "atomSourceUrlPlaceholder":{
+      	"message":"輸入源的 URL 地址…"
+    },
+    "options":{
+      	"message":"選項"
+    },
+    "edit":{
+      	"message":"編輯"
+    },
+    "delete":{
+      	"message":"刪除"
+    },
+    "save":{
+        "message":"存檔"
+    },
+    "done":{
+        "message":"完成"
+    },
+    "cancel":{
+        "message":"取消"
+    },
+    "refresh":{
+        "message":"重載"
+    },
+    "close":{
+        "message":"關閉"
+    },
+    "preference":{
+      	"message":"偏好設置"
+    },
+    "back":{
+      	"message":"返回"
+    },
+    "about":{
+      	"message":"關於"
+    },
+    
+    "thanks":{
+        "message":"致謝"
+    },
+    "thankslist":{
+        "message":"Rabby Xia<br />Yui Soda<br />王元"
+    },
+    "usingThisApp":{
+        "message":"以及正在使用這款應用軟體的"
+    },
+    "nickname":{
+        "message":"暱稱"
+    },
+    "URL_Illegal":{
+        "message":"這個 RSS 源地址不能被軟體識別。請留意目前輕讀不能直接從網站頁面抓取 RSS 地址，還請直接鍵入 RSS 的 URL 噢。"
+    },
+    "Name_AlreadyExists":{
+        "message":"名字撞車了噢，試試其他的吧。"
+    },
+    "readmore":{
+        "message":"閱讀原文"
+    }
+}
