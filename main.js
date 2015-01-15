@@ -121,7 +121,6 @@ var glyCancel=function(){
 	rmAllChind(parent);
 
 	var glyphicon=createDom("span","glyphicon glyphicon-trash");
-	glyphicon.title="删除";
 	glyphicon.onclick=glyDel;
 
 	parent.appendChild(glyphicon);
@@ -230,7 +229,8 @@ var e=function(message, sender, sendResponse){
 		updata();
 	}
 	if(message.action=="initR"){
-		document.getElementById("showNickName").innerHTML=message.name;
+		document.getElementById("showNickName_about") . innerHTML = message.name;
+		document.getElementById("showNickName_bar") . innerHTML = message.name;
 		document.getElementById("nickname_input").value=message.name;
 		chrome.runtime.sendMessage({"action":"cache"});
 	}
