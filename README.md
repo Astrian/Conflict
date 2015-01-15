@@ -1,4 +1,4 @@
-# Conflict RSS Reader
+# LightRead 轻读
 
 ## 中文
 
@@ -8,7 +8,7 @@
 
 一款适用于 Chrome 浏览器/Chromium 内核浏览器/Chrome OS 的 RSS 阅读器。
 
-名称并非正式名称，只是开发代号。这个代号来源于音乐游戏 Cytus 的曲目。
+LightRead 轻读的早期测试版本叫做 LightRead Conflict。希望参与早期测试的用户欢迎到博客/微博联系并留下你的邮箱。
 
 ### 正在实现的功能
 
@@ -23,6 +23,7 @@
 
 ### 项目社交网络主页
 
+- [官方微博](http://weibo.com/imicewarrior)
 - [动态博客](http://conflictrss.lofter.com)
 - [Google+社群](https://plus.google.com/communities/113739848602058434859)
 
@@ -34,7 +35,7 @@
 
 A RSS reader for Chrome browser, the browser with Chromium core and the computer with Chrome OS.
 
-The name *Conflict* is not a final name for this app, it’s only a code name for the project which based the track name in the music game called *Cytus*.
+The early testing version called *LightRead Conflict*. If you would like to join the early testing, you can contact me with Sina Weibo or official blog.
 
 ### Developing Functions
 
@@ -49,5 +50,6 @@ This project included the code from [Bootstrap](https://github.com/twbs/bootstra
 
 ### Social Pages
 
+- [Sina Weibo(in Chinese)](http://weibo.com/imicewarrior)
 - [Blog (in Chinese)](http://conflictrss.lofter.com)
 - [Google+ Community](https://plus.google.com/communities/113739848602058434859)
