@@ -8,7 +8,7 @@ var createDom=function(domName,domClass,domHtml){
 	r.innerHTML=domHtml;
 	return r;
 }
-var createList=function(title,source,time,author,description,link){
+var createList=function(title,source,time,author,description,link,content){
 	var r=createDom("div","card card-head");
 	var c=createDom("div","cardcontent");
 	var list=createDom("h3","list-title",title);
@@ -30,6 +30,7 @@ var createList=function(title,source,time,author,description,link){
 
 	r.onclick=intoArticle;
 	r["description"]=descriptionChange(description);
+	r["content"]=descriptionChange(content);
 	r["link"]=link;
 
 	return r;
@@ -131,7 +132,7 @@ var writeList=function(data){
 	rssTitleSort(data);
 	for(var i=0;i<data.length;i++){
 		data[i].pubDate=getDateShow(data[i].pubDate);
-		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author,data[i].description,data[i].link));
+		list.appendChild(createList(data[i].title,data[i].name,data[i].pubDate,data[i].author,data[i].description,data[i].link,data[i].content));
 	}
 }
 

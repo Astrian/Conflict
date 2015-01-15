@@ -111,10 +111,16 @@ var getRssTitle=function(xml,obj,name){
 	
 	for(var i=0;i<item.length;i++){
 		var author=item[i].getElementsByTagName("creator")[0];
+		var content=item[i].getElementsByTagName("encoded")[0];
 		if(author==null)
 			author="?";
 		else
-			author=author.childNodes[0].nodeValue
+			author=author.childNodes[0].nodeValue;
+
+		if(content==null)
+			content="";
+		else
+			content=content.childNodes[0].wholeText;
 		var rssData={
 			'title':item[i].getElementsByTagName("title")[0].childNodes[0].nodeValue,
 			'link':item[i].getElementsByTagName("link")[0].childNodes[0].nodeValue,
@@ -122,7 +128,8 @@ var getRssTitle=function(xml,obj,name){
 			'name':name,
 			'class':obj.class,
 			'description':item[i].getElementsByTagName("description")[0].childNodes[0].nodeValue,
-			'author':author
+			'author':author,
+			"content":content
 		}
 		data.push(rssData);
 	}
