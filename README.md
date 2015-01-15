@@ -35,7 +35,7 @@ LightRead 轻读的早期测试版本叫做 LightRead Conflict。希望参与早
 
 A RSS reader for Chrome browser, the browser with Chromium core and the computer with Chrome OS.
 
-The early testing version called *LightRead Conflict*. If you would like to join the early testing, you can contact me with Sina Weibo or official blog.
+The early testing version called *LightRead Conflict*. If you would like to join the early testing, you can contact us with Sina Weibo or official blog.
 
 ### Developing Functions
 
